@@ -8,4 +8,4 @@ And, here is my answers to three questions, which was listed in general requirem
 
 - I was suprised, that is the thing like staging area exists in git. Also, the thing about octopus was surprising me too. 
 
-- I totally will use all the things, that i learned during the course. But right now, i will use knowledge about pull-requests.
+- I totally will use all the things, that i learned during the course. But right now, i will use knowledge about pull-requests. 

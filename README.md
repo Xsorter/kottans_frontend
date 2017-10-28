@@ -30,3 +30,14 @@ During task 1, i learned many new things.
 
 3.Networking for Web Developers
 ![Task 1-3](task_1/task_1-3.jpg)
+
+## Task 2 
+
+**List of completed tasks screenshots:**
+
+1.What is Version Control
+![Task 2-1](task_2/task_2-1.jpg)
+
+2.GitHub & Collaboration
+![Task 2-2](task_2/task_2-2.jpg)
+

@@ -41,3 +41,14 @@ During task 1, i learned many new things.
 2.GitHub & Collaboration
 ![Task 2-2](task_2/task_2-2.jpg)
 
+## Task 3
+
+HTML5 and CSS Fundamentals
+![Task 3](task_3/task_3.jpg)
+
+## Task 4
+
+CSS Basics
+![Task 4](task_4/task_4.jpg)
+
+

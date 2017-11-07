@@ -54,7 +54,7 @@ CSS Basics
 
 ## Task 5 (Intro to JS)
 
-- So far, this Udemy course is the best in my opinion. Instrucrors bring a lot information in a funny way, but in the same time there was a lot of practical tasks, which helps a lot to understand basic things in JS. For example - loops for two-dimensional arrays, i didn't fully undrestand how it works earlier. But now all seems clear.
+- So far, this Udemy course is the best in my opinion. Instrucrors bring a lot information in a funny way, but in the same time there was a lot of practical tasks, which helps a lot to understand basic things in JS. For example - loops for two-dimensional arrays, i didn't fully undrestand how it works earlier. But now all seems clear. Oh, and flexboxfroggy was really helpful too!
 
 
 

@@ -61,5 +61,10 @@ CSS Basics
 - Lessons like "Object Decorator Patterns" and "Pseudoclassical Patterns" was kinda complex, but in the end very informative. Very useful last practice task, but i need to do more practice to fully understand OOP things in JS.
 Also, thanks for You Don't Know JS book - it's very helpful.
 
+## Task 7 (Offline Web Applications - finished)
+
+- All information in this course was new for me. It was very interesting to know about offline first implementation on web apps. Also, i get useful information about building site skeleton on slow connetcion (or "lie-fi").
+ 
+
 
 

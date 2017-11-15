@@ -26,14 +26,32 @@ function renderCards(){
     var wrapper = document.querySelector('.main__wrapper');
 
     for(i = 0; i < shuffledArray.length; i++){
-        wrapper.insertAdjacentHTML('beforeend', '<div class="main__item-box '+shuffledArray[i]+'"></div>');
+        wrapper.insertAdjacentHTML('beforeend', 
+        '<div class="main__item-box flipped">\
+        <div class="flipper">\
+        <div class="front '+shuffledArray[i]+'"></div>\
+        <div class="back">\
+        </div></div></div>');
     }
     return wrapper;
 }
 
-var render = renderCards();
 
-console.log(render);
+function init(){
+    var render = renderCards();
+    var cardsDOM = document.querySelectorAll('.main__item-box');
+    cardsDOM.forEach(function(e){
+        e.addEventListener('click', function(){
+            this.classList.toggle('flipped')
+        });
+    });
+}
+
+init();
+
+
+
+
 
 
 

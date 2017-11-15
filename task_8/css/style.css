@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .main__wrapper{
     max-width: 760px;
     margin: 0 auto;
@@ -11,6 +17,86 @@
     width: 24%;
     margin-top: 0.5em;
     box-sizing: border-box;
-    background: green;
     min-height: 150px;
+    overflow: hidden;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.main__item-box:hover{
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.11);
+    transform: scale(1.01);
+    transition: all ease-out 0.2s;
+}
+
+
+
+/*cards images*/
+.card__0{
+    background: url(../img/chip-6.png) center center no-repeat;
+    background-size: contain;
+}
+
+.card__1{
+    background: url(../img/chip.png) center center no-repeat;
+    background-size: contain;
+}
+
+.card__2{
+    background: url(../img/clubs.png) center center no-repeat;
+    background-size: contain;
+}
+
+.card__3{
+    background: url(../img/diamonds.png) center center no-repeat;
+    background-size: contain;
+}
+
+.card__4{
+    background: url(../img/hearts.png) center center no-repeat;
+    background-size: contain;
+}
+
+.card__5{
+    background: url(../img/spades.png) center center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+/*flipper functionality*/
+.front, .back {
+	width: 100%;
+    min-height: 150px;
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.61);
+}
+
+.flipper {
+	transition: 0.4s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: url(../img/poker.png) center center no-repeat;
+    background-size: contain;
+    
+}
+
+.main__item-box.flipped .flipper {
+	transform: rotateY(180deg);
 }

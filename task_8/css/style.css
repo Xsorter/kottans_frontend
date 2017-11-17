@@ -4,9 +4,27 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+body{
+    max-height: 100vh;
+}
+
+.header{
+    border-top: 5px solid #9b0000;
+    background: #d50000;
+}
+
+.header-inner{
+    max-width: 1200px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}
+
 .main__wrapper{
     max-width: 760px;
     margin: 0 auto;
+    margin-top: 2em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -28,7 +46,6 @@
     transform: scale(1.01);
     transition: all ease-out 0.2s;
 }
-
 
 
 /*cards images*/
@@ -99,4 +116,25 @@
 
 .main__item-box.flipped .flipper {
 	transform: rotateY(180deg);
+}
+
+.show{
+    pointer-events: none;
+}
+
+.cardhide{
+    visibility: hidden;
+}
+
+
+
+/*media query*/
+@media screen and (max-width: 400px){
+    .main__item-box{
+        min-height: 120px;
+    }
+
+    .front, .back {
+        min-height: 120px;
+    }
 }

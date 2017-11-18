@@ -8,6 +8,7 @@
 function gameRun(){
 
     var data = {
+        score: 20,
         flippedArr: [],
         hiddenArr: [],
         render: renderCards(6), //Number of card pairs. Use even value. For now game have pictures only for 6 pairs max
@@ -93,7 +94,12 @@ function gameRun(){
     
     //iterate over array with card items
     data.cardsDOM.forEach(function(e){
-        e.addEventListener('click', function(){
+
+        ("click touchstart".split(" ")).forEach(function(el){
+            e.addEventListener(el,cardsCheck,false);
+        }); 
+
+        function cardsCheck(){
             this.classList.remove('flipped');
             this.classList.add('show');
 
@@ -105,7 +111,9 @@ function gameRun(){
             if(data.flippedArr.length >= 2 && data.flippedArr[0].dataset.num === data.flippedArr[1].dataset.num){
                 cardHide();
             }else if(data.flippedArr.length >=2){
-                setTimeout(resetArray, 400)
+                data.score--;
+                setTimeout(resetArray, 400);
+                console.log(data.score);
             };
     
             /*check if array with hidden elements 
@@ -114,7 +122,7 @@ function gameRun(){
             if(data.cardsDOM.length === data.hiddenArr.length){
                 setTimeout(gameEnd, 1300)
             };
-        });
+        }
     });
 }
 

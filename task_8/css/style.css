@@ -13,8 +13,6 @@ body{
     background: #d50000;
 }
 
-
-
 .header-inner{
     max-width: 1200px;
     padding: 0px 10px 10px 10px;
@@ -79,8 +77,6 @@ body{
     background: url(../img/spades.png) center center no-repeat;
     background-size: contain;
 }
-
-
 
 
 /*flipper functionality*/
@@ -190,7 +186,6 @@ body{
     color: green;
     transition: all ease-out 0.2s;
 }
-
 
 
 /*helpers*/

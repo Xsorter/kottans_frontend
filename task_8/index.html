@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#9b0000">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <title>Match pair game</title>
 </head>
 
 <body>
+    
+
     <header class="header">
         <div class="header-inner">   
             <h1>"Match Pair" game</h1>
@@ -19,6 +22,24 @@
 
     <main class="main__wrapper cards">
     </main>
+
+    <div class="dialog-wrapper none">
+        <div class="dialog-window">
+             <h2>
+                 Congratulations!
+             </h2>
+             <p>
+                 You win the game!
+             </p>
+             <button id="button">
+                Play again
+             </button>
+             <button id="button-quit">
+                Quit
+             </button>
+        </div>            
+    </div>
+    
 
     <script src="js/main.js"></script>
 </body>

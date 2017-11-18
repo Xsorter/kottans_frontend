@@ -13,6 +13,8 @@ body{
     background: #d50000;
 }
 
+
+
 .header-inner{
     max-width: 1200px;
     padding: 10px;
@@ -36,13 +38,12 @@ body{
     margin-top: 0.5em;
     box-sizing: border-box;
     min-height: 150px;
-    overflow: hidden;
     cursor: pointer;
     perspective: 1000px;
 }
 
 .main__item-box:hover{
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.11);
+    box-shadow: 1px 3px 7px 0px rgba(0,0,0,0.51);
     transform: scale(1.01);
     transition: all ease-out 0.2s;
 }
@@ -86,7 +87,7 @@ body{
 .front, .back {
 	width: 100%;
     min-height: 150px;
-    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.61);
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.11);
 }
 
 .flipper {
@@ -118,6 +119,80 @@ body{
 	transform: rotateY(180deg);
 }
 
+
+/*dialog window*/
+.dialog-wrapper{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog-window{
+    max-width: 310px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.dialog-window h2{
+    color: #333;
+    font-size: 175%;
+    margin: 10px;
+}
+
+.dialog-window p{
+    margin: 10px;
+}
+
+.dialog-window button{
+    background: #d50000;
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all ease-out 0.2s;
+}
+
+.dialog-window button:hover{
+    background: #fff;
+    border: 1px solid #d50000;
+    color: #d50000;
+    transition: all ease-out 0.2s;
+}
+
+.dialog-window #button-quit{
+    background: green;
+}
+
+.dialog-window #button-quit:hover{
+    background: #fff;
+    border: 1px solid green;
+    color: green;
+    transition: all ease-out 0.2s;
+}
+
+
+
+/*helpers*/
 .show{
     pointer-events: none;
 }
@@ -126,7 +201,9 @@ body{
     visibility: hidden;
 }
 
-
+.none{
+    display: none;
+}
 
 /*media query*/
 @media screen and (max-width: 400px){

@@ -69,4 +69,8 @@ Also, thanks for You Don't Know JS book - it's very helpful.
 
 [Memory - Pair Game on gh-pages](https://xsorter.github.io/kottans_frontend/task_8/)
 
+## Task 9 (Website Performance Optimization)
+
+- It was very useful lesson. Information about CRP and perfomance instrument in Chrome Dev tools was new for me, and i already found where i can implement my new skill. Also, articles from extra materials about V8 and memory management in browser were informative.
+
 

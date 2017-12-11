@@ -1,17 +1,32 @@
 
 let data = {
-    city :'Makeevka',
+    city :'',
     secretKey : 'c6976a4c4e05421f9b4eaee7a311f0dc',
-    units : 'M', //I
     formDOM : document.querySelector('.search-form'),
     inputDOM : document.querySelector('#search'),
     mainDOM: document.querySelector('.main-wrapper'),
     titleDOM: document.querySelector('.main-title'),
+    unitsDOM: document.querySelector('#units'),
+    periodDOM: document.querySelector('#period'),
     tempArray: [],
     weather: {
         date: ''
-    }
+    },
+    units: '',
+    period: 1
 }
+
+
+//read selected value for temperature units
+data.unitsDOM.addEventListener('change', function(){
+    data.units = data.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
+});
+
+data.periodDOM.addEventListener('change', function(){
+    data.period = +data.periodDOM.options[document.querySelector('#period').selectedIndex].value;
+    console.log(data.period);
+});
+
 
 data.formDOM.addEventListener('submit', function(e){
     e.preventDefault();
@@ -19,7 +34,6 @@ data.formDOM.addEventListener('submit', function(e){
     console.log('done ', data.inputDOM.value);
     console.log(`https://api.weatherbit.io/v2.0/forecast/daily?city=${data.city}&units=${data.units}&key=${data.secretKey}`);
     citySearch();
-
     console.log(citySearch.data);
 });
 
@@ -45,7 +59,7 @@ function citySearch (){
         console.log(body);
         if(body){
             data.titleDOM.insertAdjacentHTML('beforeend', `Current city: <span>${body.city_name}</span>`);
-            for(i=0; i< body.data.length; i++){
+            for(i=0; i< data.period; i++){
                 console.log(body.data[i]);
                 console.log(body.data[i].datetime);
                 console.log(body.data[i].temp);
@@ -60,6 +74,7 @@ function citySearch (){
                     <p><code>icon: ${body.data[i].weather.icon}</code></p>
                     <p>Wind speed, m/s: ${body.data[i].wind_spd}</p>
                     <p>Probability of Precipitation, %: ${body.data[i].pop}</p>
+                    <object data="assets/icons/${body.data[i].weather.icon}.svg" type=""></object>
                 </div>
                 `);
             }

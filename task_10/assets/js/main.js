@@ -1,8 +1,10 @@
 
+let parsedUrl = new URL(window.location.href);
+
 let data = {
-    city :'',
+    city : parsedUrl.searchParams.get("city"),
     secretKey : 'c6976a4c4e05421f9b4eaee7a311f0dc',
-    formDOM : document.querySelector('.search-form'),
+    formDOM : document.querySelector('#searchForm'),
     inputDOM : document.querySelector('#search'),
     mainDOM: document.querySelector('.main-wrapper'),
     titleDOM: document.querySelector('.main-title'),
@@ -13,8 +15,19 @@ let data = {
         date: ''
     },
     units: '',
-    period: 1
+    period: 1,
+    loader: false
 }
+
+window.addEventListener('load', function(){
+    if(parsedUrl.searchParams.get("city")){
+        citySearch();
+    }
+});
+
+console.log(data.city);
+console.log('FIRST LOAD ',data.loader);
+
 
 
 //read selected value for temperature units
@@ -28,23 +41,38 @@ data.periodDOM.addEventListener('change', function(){
 });
 
 
+
+
 data.formDOM.addEventListener('submit', function(e){
     e.preventDefault();
     data.city = data.inputDOM.value;
     console.log('done ', data.inputDOM.value);
-    console.log(`https://api.weatherbit.io/v2.0/forecast/daily?city=${data.city}&units=${data.units}&key=${data.secretKey}`);
     citySearch();
+
+    var state = {};
+    var title = 'city';
+    var url = `index.html?city=${data.city}`;
+    
+    history.pushState(state, title, url);
+    var parsedUrl = new URL(window.location.href);
+    console.log(parsedUrl.searchParams.get("city"));
+
+    
     console.log(citySearch.data);
+
 });
 
 
 function citySearch (){
     data.mainDOM.innerHTML = "";
     data.titleDOM.innerHTML = "";
-
+    data.loader = true;
+    
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${data.city}&units=${data.units}&key=${data.secretKey}`)
     .then(function(response) {
         console.log(response.status);
+        data.loader = false;
+        
         if(response.status === 204){
             data.titleDOM.insertAdjacentHTML('beforeend', `City not found. Please, try again.`);
         }else if(response.status === 400){
@@ -78,6 +106,7 @@ function citySearch (){
                 </div>
                 `);
             }
+            /*window.location.search = `${body.city_name}`*/
         };
         
         return body;

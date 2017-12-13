@@ -1,6 +1,8 @@
 
 let parsedUrl = new URL(window.location.href);
 
+
+
 let data = {
     city : parsedUrl.searchParams.get("city"),
     secretKey : 'c6976a4c4e05421f9b4eaee7a311f0dc',
@@ -10,21 +12,46 @@ let data = {
     titleDOM: document.querySelector('.main-title'),
     unitsDOM: document.querySelector('#units'),
     periodDOM: document.querySelector('#period'),
+    historyDOM: document.querySelector('.main-history'),
+    buttonHistoryClear: document.querySelector('#historyClear'),
     tempArray: [],
     weather: {
         date: ''
     },
     units: '',
     period: 1,
-    loader: false
+    loader: false,
+    historyObj: { 
+        city: [] 
+    }
 }
+
+console.log(data.historyObj.city)
+
+
+//TODO - create some structure for this part!!
+if(localStorage.getItem('history')) {
+    data.historyObj = JSON.parse(localStorage.getItem('history'));
+    historyShow();
+}
+/////////// 
+
+//TODO hide array without reload
+data.buttonHistoryClear.addEventListener('click', function(){
+    localStorage.clear();
+});
+
 
 window.addEventListener('load', function(){
     if(parsedUrl.searchParams.get("city")){
         citySearch();
-    }
+    };
 });
 
+
+
+
+console.log(data.historyArrayLocal);
 console.log(data.city);
 console.log('FIRST LOAD ',data.loader);
 
@@ -42,13 +69,15 @@ data.periodDOM.addEventListener('change', function(){
 
 
 
-
+//fire event from search form
 data.formDOM.addEventListener('submit', function(e){
     e.preventDefault();
     data.city = data.inputDOM.value;
     console.log('done ', data.inputDOM.value);
     citySearch();
-
+    
+    historyPush();
+    
     var state = {};
     var title = 'city';
     var url = `index.html?city=${data.city}`;
@@ -56,11 +85,29 @@ data.formDOM.addEventListener('submit', function(e){
     history.pushState(state, title, url);
     var parsedUrl = new URL(window.location.href);
     console.log(parsedUrl.searchParams.get("city"));
-
-    
     console.log(citySearch.data);
-
 });
+
+
+function historyPush(){
+    data.historyObj.city.push(data.city);
+    localStorage.setItem('history', JSON.stringify(data.historyObj));
+    historyShow();
+}
+
+function historyShow(){
+    data.historyDOM.innerHTML = '';
+    if(data.historyObj){
+        for(i=0; i<data.historyObj.city.length; i++){
+            data.historyDOM.insertAdjacentHTML('beforeend', `<li>${data.historyObj.city[i]}</li>`);
+        }
+    }
+}
+
+
+
+
+
 
 
 function citySearch (){

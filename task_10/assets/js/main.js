@@ -60,10 +60,16 @@ console.log('FIRST LOAD ',data.loader);
 //read selected value for temperature units
 data.unitsDOM.addEventListener('change', function(){
     data.units = data.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
+    if(data.city){
+        citySearch();
+    }
 });
 
 data.periodDOM.addEventListener('change', function(){
     data.period = +data.periodDOM.options[document.querySelector('#period').selectedIndex].value;
+    if(data.city){
+        citySearch();
+    }
     console.log(data.period);
 });
 
@@ -75,7 +81,6 @@ data.formDOM.addEventListener('submit', function(e){
     data.city = data.inputDOM.value;
     console.log('done ', data.inputDOM.value);
     citySearch();
-    
     historyPush();
     
     var state = {};

@@ -13,7 +13,11 @@ let data = {
     unitsDOM: document.querySelector('#units'),
     periodDOM: document.querySelector('#period'),
     historyDOM: document.querySelector('.main-history'),
+    favoritesDOM: document.querySelector('.main-favorites'),
     buttonHistoryClear: document.querySelector('#historyClear'),
+    buttonFavoritesClear: document.querySelector('#favoritesClear'),
+    buttonFavoritesAdd: document.querySelector('#favorites'),
+    loaderDOM: document.querySelector('.loader-wrapper'),
     tempArray: [],
     weather: {
         date: ''
@@ -23,35 +27,54 @@ let data = {
     loader: false,
     historyObj: { 
         city: [] 
+    },
+    favoriteObj: {
+        city: []
     }
 }
 
-console.log(data.historyObj.city)
-
+window.addEventListener('load', function(){
+    if(parsedUrl.searchParams.get("city")){
+        citySearch(data.city);
+    };
+});
 
 //TODO - create some structure for this part!!
 if(localStorage.getItem('history')) {
     data.historyObj = JSON.parse(localStorage.getItem('history'));
-    historyShow();
+    historyShow(data.historyDOM, data.historyObj, 'history-item');
+}
+
+if(localStorage.getItem('favorites')) {
+    data.favoriteObj = JSON.parse(localStorage.getItem('favorites'));
+    historyShow(data.favoritesDOM, data.favoriteObj, 'favorite-item');
 }
 /////////// 
 
 //TODO hide array without reload
 data.buttonHistoryClear.addEventListener('click', function(){
-    localStorage.clear();
+    clearLocalStorage(data.historyDOM, 'history')
+});
+
+data.buttonFavoritesClear.addEventListener('click', function(){
+    clearLocalStorage(data.favoritesDOM, 'favorites')
 });
 
 
-window.addEventListener('load', function(){
-    if(parsedUrl.searchParams.get("city")){
-        citySearch();
-    };
-});
+
+function clearLocalStorage(DOM, key){
+    localStorage.removeItem(key);
+    DOM.innerHTML = '';
+    DOM.insertAdjacentHTML('beforeend', `there are no ${key} yet`)
+}
 
 
 
 
-console.log(data.historyArrayLocal);
+
+
+
+
 console.log(data.city);
 console.log('FIRST LOAD ',data.loader);
 
@@ -61,16 +84,15 @@ console.log('FIRST LOAD ',data.loader);
 data.unitsDOM.addEventListener('change', function(){
     data.units = data.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
     if(data.city){
-        citySearch();
+        citySearch(data.city);
     }
 });
 
 data.periodDOM.addEventListener('change', function(){
     data.period = +data.periodDOM.options[document.querySelector('#period').selectedIndex].value;
     if(data.city){
-        citySearch();
+        citySearch(data.city);
     }
-    console.log(data.period);
 });
 
 
@@ -80,8 +102,8 @@ data.formDOM.addEventListener('submit', function(e){
     e.preventDefault();
     data.city = data.inputDOM.value;
     console.log('done ', data.inputDOM.value);
-    citySearch();
-    historyPush();
+    citySearch(data.city);
+    historyPush(data.historyDOM, data.historyObj, 'history-item', 'history');
     
     var state = {};
     var title = 'city';
@@ -89,22 +111,30 @@ data.formDOM.addEventListener('submit', function(e){
     
     history.pushState(state, title, url);
     var parsedUrl = new URL(window.location.href);
+
+
     console.log(parsedUrl.searchParams.get("city"));
     console.log(citySearch.data);
 });
 
 
-function historyPush(){
-    data.historyObj.city.push(data.city);
-    localStorage.setItem('history', JSON.stringify(data.historyObj));
-    historyShow();
+function historyPush(DOM, obj, cssClass, localStorageKey){
+    obj.city.push(data.city);
+    localStorage.setItem(localStorageKey, JSON.stringify(obj));
+    historyShow(DOM, obj, cssClass);
 }
 
-function historyShow(){
-    data.historyDOM.innerHTML = '';
-    if(data.historyObj){
-        for(i=0; i<data.historyObj.city.length; i++){
-            data.historyDOM.insertAdjacentHTML('beforeend', `<li>${data.historyObj.city[i]}</li>`);
+function historyShow(DOM, obj, cssClass){
+    DOM.innerHTML = '';
+    if(obj){
+        for(i=0; i<obj.city.length; i++){
+            DOM.insertAdjacentHTML('beforeend', `<li class="${cssClass}">${obj.city[i]}</li>`);
+        }
+        for(i=0; i<document.querySelectorAll(`.${cssClass}`).length; i++){
+            document.querySelectorAll(`.${cssClass}`)[i].addEventListener('click', function(){
+                citySearch(this.innerHTML);
+            })
+            console.log(document.querySelectorAll(`.${cssClass}`)[i]);
         }
     }
 }
@@ -112,15 +142,13 @@ function historyShow(){
 
 
 
-
-
-
-function citySearch (){
+function citySearch (city){
     data.mainDOM.innerHTML = "";
     data.titleDOM.innerHTML = "";
     data.loader = true;
+    data.loaderDOM.classList.remove('none');
     
-    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${data.city}&units=${data.units}&key=${data.secretKey}`)
+    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&units=${data.units}&key=${data.secretKey}`)
     .then(function(response) {
         console.log(response.status);
         data.loader = false;
@@ -137,8 +165,16 @@ function citySearch (){
      })
     .then(function(body) {
         console.log(body);
+        data.loaderDOM.classList.add('none');
         if(body){
-            data.titleDOM.insertAdjacentHTML('beforeend', `Current city: <span>${body.city_name}</span>`);
+            data.titleDOM.insertAdjacentHTML('beforeend', 
+            `Current city: <span>${body.city_name}</span> 
+            <span id="favorites" style="color: red; font-size:80%">Add to favorites</span>`);
+
+            document.querySelector('#favorites').addEventListener('click', function(){
+                historyPush(data.favoritesDOM, data.favoriteObj, 'favorite-item', 'favorites');
+            });
+
             for(i=0; i< data.period; i++){
                 console.log(body.data[i]);
                 console.log(body.data[i].datetime);
@@ -164,6 +200,7 @@ function citySearch (){
         return body;
     })
     .catch(function(error){
+        data.loaderDOM.classList.add('none');
         console.log(error)
     }); 
 }

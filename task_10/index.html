@@ -9,58 +9,63 @@
     <title>Weather App</title>
 </head>
 <body>
-
-    <style>
-        
-    </style>
-    
     <div class="loader-wrapper none">
         <object data="assets/img/loader.svg" type=""></object>
     </div>
 
-    <form id="searchForm" action="" >
-        <label for="units">Choose temperature units:</label>
-        <select name="units" id="units">
-            <option value="M">Celcium</option>
-            <option value="I">Fahrenheit</option>
-        </select>
+    <header class="header-wrapper">
+        <form id="searchForm" action="" >
+            <label for="units">Choose temperature units:</label>
+            <select name="units" id="units">
+                <option value="M">Celcius</option>
+                <option value="I">Fahrenheit</option>
+            </select>
+    
+            <label for="period">Choose forecast period:</label>
+            <select name="period" id="period">
+                <option value="1">Today</option>
+                <option value="2">2 days</option>
+                <option value="4">4 days</option>
+                <option value="7">One week</option>
+                <option value="14">Two weeks</option>
+            </select>
+    
+            <input id="search" value="" placeholder="enter city name" name="city" type="text">
+            <button>
+                Search
+            </button>
+        </form>
 
-        <label for="period">Choose forecast period:</label>
-        <select name="period" id="period">
-            <option value="1">Today</option>
-            <option value="2">2 days</option>
-            <option value="4">4 days</option>
-            <option value="7">One week</option>
-            <option value="14">Two weeks</option>
-        </select>
+        <h1 class="main-title"></h1>
+    </header>
+    
+    <main class="main-content-wrapper">
 
-        <input id="search" value="" placeholder="enter city name" name="city" type="text">
-        <button>
-            Search
-        </button>
-    </form>
+        <div class="main-wrapper"></div>
+        
+        <div class="main-sidebar">
+            <section class="main-history-wrapper">
+                <h3>Search history</h3>
+                <ul class="main-history">
+                    <li>there are no history yet</li>
+                </ul>
+                <button class="main-sidebar-button" id="historyClear">clear history</button>
+            </section>
+                    
+            <section class="main-favorites-wrapper">
+                <h3>Favorites</h3>
+                <ul class="main-favorites">
+                    <li>there are no favorites yet</li>
+                </ul>
+                <button class="main-sidebar-button" id="favoritesClear">clear favorites</button>
+            </section>
+        </div>
+        
 
+    </main>
 
+    
 
-    <h1 class="main-title"></h1>
-
-    <section class="main-history-wrapper" style="border: 1px solid #000; padding: 5px; width: 200px;  overflow: hidden; float: right" >
-        <h2>SEARCH HISTORY</h2>
-        <ul style="height: 150px; overflow: auto" class="main-history">
-            <li>there are no history yet</li>
-        </ul>
-        <button id="historyClear">clear history</button>
-    </section>
-
-    <section class="main-favorites-wrapper" style="border: 1px solid #000; padding: 5px; width: 200px;  overflow: hidden; float: right" >
-        <h2>FAVORITES</h2>
-        <ul style="height: 150px; overflow: auto" class="main-favorites">
-            <li>there are no favorites yet</li>
-        </ul>
-        <button id="favoritesClear">clear favorites</button>
-    </section>
-
-    <div class="main-wrapper"></div>
 
     <script src="assets/js/main.js"></script>
 </body>

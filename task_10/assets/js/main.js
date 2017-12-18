@@ -22,7 +22,8 @@ let data = {
     weather: {
         date: ''
     },
-    units: '',
+    units: 'M',
+    unitsDisplay: 'C',
     period: 1,
     loader: false,
     historyObj: { 
@@ -83,6 +84,7 @@ console.log('FIRST LOAD ',data.loader);
 //read selected value for temperature units
 data.unitsDOM.addEventListener('change', function(){
     data.units = data.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
+    data.unitsDisplay = data.units === 'M' ? 'C' : 'F';
     if(data.city){
         citySearch(data.city);
     }
@@ -105,12 +107,7 @@ data.formDOM.addEventListener('submit', function(e){
     citySearch(data.city);
     historyPush(data.historyDOM, data.historyObj, 'history-item', 'history');
     
-    var state = {};
-    var title = 'city';
-    var url = `index.html?city=${data.city}`;
     
-    history.pushState(state, title, url);
-    var parsedUrl = new URL(window.location.href);
 
 
     console.log(parsedUrl.searchParams.get("city"));
@@ -147,6 +144,13 @@ function citySearch (city){
     data.titleDOM.innerHTML = "";
     data.loader = true;
     data.loaderDOM.classList.remove('none');
+
+    var state = {};
+    var title = city;
+    var url = `index.html?city=${city}`;
+    
+    history.pushState(state, title, url);
+    var parsedUrl = new URL(window.location.href);
     
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&units=${data.units}&key=${data.secretKey}`)
     .then(function(response) {
@@ -165,6 +169,8 @@ function citySearch (city){
      })
     .then(function(body) {
         console.log(body);
+        console.log(data.units);
+        console.log(data.unitsDisplay);
         data.loaderDOM.classList.add('none');
         if(body){
             data.titleDOM.insertAdjacentHTML('beforeend', 
@@ -180,17 +186,22 @@ function citySearch (city){
                 console.log(body.data[i].datetime);
                 console.log(body.data[i].temp);
                 data.mainDOM.insertAdjacentHTML('beforeend', 
-                `<div style="border: 1px solid #d2d2d2; padding: 10px; margin-top: 10px">
-                    <p>${body.data[i].datetime}</p> 
-                    <p>Average Temperature: ${body.data[i].temp}</p>
-                    <p>Maximum Temperature: ${body.data[i].max_temp}</p>
-                    <p>Minimum temperature: ${body.data[i].min_temp}</p>
-                    <p>"Feels Like" temperature, max: ${body.data[i].app_max_temp}</p>
-                    <p>"Feels Like" temperature, min: ${body.data[i].app_min_temp}</p>
-                    <p><code>icon: ${body.data[i].weather.icon}</code></p>
-                    <p>Wind speed, m/s: ${body.data[i].wind_spd}</p>
-                    <p>Probability of Precipitation, %: ${body.data[i].pop}</p>
-                    <object data="assets/icons/${body.data[i].weather.icon}.svg" type=""></object>
+                `<div class="main-content-box main-content-box_count-${i}">
+                    <div class="main-content-box_values">
+                        <p>
+                            <span class="number-caption">${body.data[i].temp}</span> ${data.unitsDisplay}
+                            <p class="title-caption">avg. temp.</p> 
+                        </p>
+                        <object data="assets/icons/${body.data[i].weather.icon}.svg" type=""></object>
+                        <p class="title-caption">${body.data[i].weather.description}</p> 
+                    </div>
+                    <p class="date">${body.data[i].datetime.split('-').reverse().join('.')}</p> 
+                    <p>max. temp.: ${body.data[i].max_temp} ${data.unitsDisplay}</p>
+                    <p>min. temp.: ${body.data[i].min_temp} ${data.unitsDisplay}</p>
+                    <p>feels like, max: ${body.data[i].app_max_temp} ${data.unitsDisplay}</p>
+                    <p>feels like, min: ${body.data[i].app_min_temp} ${data.unitsDisplay}</p>
+                    <p>wind: ${body.data[i].wind_spd} m/s</p>
+                    <p>precipitation: ${body.data[i].pop} %</p>
                 </div>
                 `);
             }

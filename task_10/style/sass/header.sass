@@ -1,3 +1,55 @@
 .header
     &-wrapper   
-        background: #ffffff
+        
+
+    &-title 
+        text-align: center
+        font-size: 250%
+        margin: 0.5em
+        color: #fff
+        letter-spacing: 1px
+        text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.80)
+        font-family: 'Fredoka One', cursive
+
+    &-search
+        &-wrapper
+            max-width: 1260px
+            margin: 0 auto
+            display: flex
+            justify-content: center
+            input
+                max-width: 700px
+                border: none
+                font-size: 135%
+                width: 100%
+                padding: 0.5em
+                box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.45)
+            button    
+                margin-left: 1em
+                padding: 0 1em 0 1em
+                font-size: 120%
+                text-transform: uppercase
+                color: #fff 
+                border: none
+                background: #003a6d
+                transition: all ease-out 0.2s
+                cursor: pointer
+                &:hover 
+                    opacity: 0.5
+                    transition: all ease-out 0.2s
+
+    &-filter 
+        &-wrapper
+            max-width: 1260px
+            margin: 0 auto
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+            select 
+                background: #fff 
+                color: #333 
+                border: 1px solid #f6f6f6
+                margin: 0 0.5em 0 0.5em
+            .filter-box 
+                margin-top: 0.5em    

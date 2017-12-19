@@ -5,67 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link rel="stylesheet" href="style/css/main.css">
     <title>Weather App</title>
 </head>
 <body>
-    <div class="loader-wrapper none">
-        <object data="assets/img/loader.svg" type=""></object>
-    </div>
 
-    <header class="header-wrapper">
-        <form id="searchForm" action="" >
-            <label for="units">Choose temperature units:</label>
-            <select name="units" id="units">
-                <option value="M">Celcius</option>
-                <option value="I">Fahrenheit</option>
-            </select>
-    
-            <label for="period">Choose forecast period:</label>
-            <select name="period" id="period">
-                <option value="1">Today</option>
-                <option value="2">2 days</option>
-                <option value="4">4 days</option>
-                <option value="7">One week</option>
-                <option value="14">Two weeks</option>
-            </select>
-    
-            <input id="search" value="" placeholder="enter city name" name="city" type="text">
-            <button>
-                Search
-            </button>
-        </form>
-
-        <h1 class="main-title"></h1>
-    </header>
-    
-    <main class="main-content-wrapper">
-
-        <div class="main-wrapper"></div>
-        
-        <div class="main-sidebar">
-            <section class="main-history-wrapper">
-                <h3>Search history</h3>
-                <ul class="main-history">
-                    <li>there are no history yet</li>
-                </ul>
-                <button class="main-sidebar-button" id="historyClear">clear history</button>
-            </section>
-                    
-            <section class="main-favorites-wrapper">
-                <h3>Favorites</h3>
-                <ul class="main-favorites">
-                    <li>there are no favorites yet</li>
-                </ul>
-                <button class="main-sidebar-button" id="favoritesClear">clear favorites</button>
-            </section>
+    <div class="wrapper-outer">
+        <div class="loader-wrapper none">
+            <object data="assets/img/loader.svg" type=""></object>
         </div>
+
+        <header class="header-wrapper">
+
+            <h1 class="header-title">Weather-app</h1>
+
+            <form id="searchForm" action="">
+                <div class="header-search-wrapper">
+                    <input id="search" value="" placeholder="enter city name" name="city" type="text">
+                    <button>
+                        Search
+                    </button>
+                </div>
+                
+                <div class="header-filter-wrapper">
+                    <div class="filter-box">
+                        <label for="units">temperature units:</label>
+                        <select name="units" id="units">
+                            <option value="M">Celcius</option>
+                            <option value="I">Fahrenheit</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-box">
+                        <label for="period">forecast period:</label>
+                        <select name="period" id="period">
+                            <option value="1">Today</option>
+                            <option value="2">2 days</option>
+                            <option value="4">4 days</option>
+                            <option value="7">One week</option>
+                            <option value="14">Two weeks</option>
+                        </select>        
+                    </div>   
+                </div>
+            </form>
+
+            <h2 class="main-title"></h2>
+        </header>
         
+        <main class="main-content-wrapper">
 
-    </main>
+            <div class="main-wrapper"></div>
+            
+            <div class="main-sidebar">
+                <section class="main-history-wrapper">
+                    <h3>Search history</h3>
+                    <ul class="main-history">
+                        <li>there are no history yet</li>
+                    </ul>
+                    <button class="main-sidebar-button" id="historyClear">clear history</button>
+                </section>
+                        
+                <section class="main-favorites-wrapper">
+                    <h3>Favorites</h3>
+                    <ul class="main-favorites">
+                        <li>there are no favorites yet</li>
+                    </ul>
+                    <button class="main-sidebar-button" id="favoritesClear">clear favorites</button>
+                </section>
+            </div>
+        </main>
 
-    
-
+        <footer class="footer">
+            <p>
+                2017 <span>&bull;</span> icons taken from flaticon.com, animated svg taken from amcharts.com (IPL), 
+                weather data brign by weatherbit.io API <span>&bull;</span> made by Alex Nelin
+            </p>
+        </footer>
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>

@@ -129,6 +129,7 @@ function historyShow(DOM, obj, cssClass){
         }
         for(i=0; i<document.querySelectorAll(`.${cssClass}`).length; i++){
             document.querySelectorAll(`.${cssClass}`)[i].addEventListener('click', function(){
+                data.city = this.innerHTML;
                 citySearch(this.innerHTML);
             })
             console.log(document.querySelectorAll(`.${cssClass}`)[i]);
@@ -174,8 +175,9 @@ function citySearch (city){
         data.loaderDOM.classList.add('none');
         if(body){
             data.titleDOM.insertAdjacentHTML('beforeend', 
-            `Current city: <span>${body.city_name}</span> 
-            <span id="favorites" style="color: red; font-size:80%">Add to favorites</span>`);
+            `Current city: ${body.city_name} 
+            <img id="favorites" src="assets/img/favorites-button.png">
+            `);
 
             document.querySelector('#favorites').addEventListener('click', function(){
                 historyPush(data.favoritesDOM, data.favoriteObj, 'favorite-item', 'favorites');

@@ -67,7 +67,7 @@ body {
   background: #fff;
   padding: 1em;
   max-width: 325px;
-  min-height: 200px;
+  max-height: 200px;
   width: 100%;
   margin: 0 0 0.5em 0.5em;
   transition: all ease-out 0.1s;
@@ -158,12 +158,14 @@ body {
 }
 /* line 121, ../sass/content.sass */
 .main-sidebar section {
+  max-width: 200px;
+  overflow: hidden;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   padding: 0.5em;
   text-align: center;
 }
-/* line 126, ../sass/content.sass */
+/* line 128, ../sass/content.sass */
 .main-sidebar section:last-child {
   margin-top: 1em;
 }

@@ -106,9 +106,15 @@
     /**localstorage methods for history and favorites
       first, we push data to localstorage**/
     function historyPush(DOM, obj, cssClass, localStorageKey){
-        obj.city.push(data.city);
-        localStorage.setItem(localStorageKey, JSON.stringify(obj));
-        historyShow(DOM, obj, cssClass);
+        if(localStorage.getItem('favorites') && 
+            localStorageKey === 'favorites' && 
+            JSON.parse(localStorage.getItem('favorites')).city.indexOf(data.city) != -1){
+            //check if city already in favorites
+        }else{
+            obj.city.push(data.city);
+            localStorage.setItem(localStorageKey, JSON.stringify(obj));
+            historyShow(DOM, obj, cssClass);
+        }
     }
 
     /*and then, read the data*/ 
@@ -133,6 +139,7 @@
     function clearLocalStorage(DOM, key){
         localStorage.removeItem(key);
         DOM.innerHTML = '';
+        console.log(DOM);
         DOM.insertAdjacentHTML('beforeend', `there are no ${key} yet`)
     }
     
@@ -156,6 +163,8 @@
         .then(function(response) {
             if(response.status === 204){
                 dataDOM.titleDOM.insertAdjacentHTML('beforeend', `City not found. Please, try again.`);
+            }else if(response.status === 429){
+                dataDOM.titleDOM.insertAdjacentHTML('beforeend', `API Limit reached (75 queries per 1 hour)`);
             }else if(response.status === 400){
                 dataDOM.titleDOM.insertAdjacentHTML('beforeend', `Search field is empty. Please, enter city name`);
                 return false;

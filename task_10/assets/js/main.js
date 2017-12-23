@@ -24,7 +24,6 @@
         loaderDOM: document.querySelector('.loader-wrapper'),
     }
     
-
     let data = {
         city : parsedUrl.searchParams.get("city"),
         
@@ -46,7 +45,6 @@
     window.addEventListener('load', ()=>{
         init();
     });
-    
     
     function init(){
 
@@ -101,8 +99,6 @@
         });
     }
     
-    
-
     /**localstorage methods for history and favorites
       first, we push data to localstorage**/
     function historyPush(DOM, obj, cssClass, localStorageKey){
@@ -143,8 +139,18 @@
         DOM.insertAdjacentHTML('beforeend', `there are no ${key} yet`)
     }
     
+    function createFavoriteButton (body){
+        dataDOM.titleDOM.insertAdjacentHTML('beforeend', 
+        `Current city: ${body.city_name} 
+        <img id="favorites" src="assets/img/favorites-button.png">
+        `);
+        document.querySelector('#favorites').addEventListener('click', function(){
+            historyPush(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item', 'favorites');
+        });
+    }
+
     //here we push current city to URL
-    function urlPush(city){
+    function urlPush (city){
         let state = {};
         let title = city;
         let url = `index.html?city=${city}`;
@@ -152,6 +158,38 @@
         let parsedUrl = new URL(window.location.href);
     }
     
+    //render method
+    function cityRender (body){
+        //hide loader, when loaded
+        dataDOM.loaderDOM.classList.add('none');
+
+        //insert favorite button
+        createFavoriteButton(body);
+
+        for(let i=0; i< data.period; i++){
+            dataDOM.mainDOM.insertAdjacentHTML('beforeend',
+            //template with weather data 
+            `<div class="main-content-box main-content-box_count-${i}">
+                <div class="main-content-box_values">
+                    <p>
+                        <span class="number-caption">${body.data[i].temp}</span> ${data.unitsDisplay}
+                        <p class="title-caption">avg. temp.</p> 
+                    </p>
+                    <object data="assets/icons/${body.data[i].weather.icon}.svg" type=""></object>
+                    <p class="title-caption">${body.data[i].weather.description}</p> 
+                </div>
+                <p class="date">${body.data[i].datetime.split('-').reverse().join('.')}</p> 
+                <p>max. temp.: ${body.data[i].max_temp} ${data.unitsDisplay}</p>
+                <p>min. temp.: ${body.data[i].min_temp} ${data.unitsDisplay}</p>
+                <p>feels like, max: ${body.data[i].app_max_temp} ${data.unitsDisplay}</p>
+                <p>feels like, min: ${body.data[i].app_min_temp} ${data.unitsDisplay}</p>
+                <p>wind: ${body.data[i].wind_spd} m/s</p>
+                <p>precipitation: ${body.data[i].pop} %</p>
+            </div>
+            `);
+        }
+    }
+
     //fetch method
     function citySearch (city){
         dataDOM.mainDOM.innerHTML = "";
@@ -173,40 +211,8 @@
             }
          })
         .then(function(body) {
-            dataDOM.loaderDOM.classList.add('none');//hide loader, when loaded
             if(body){
-
-                //insert favorite button
-                dataDOM.titleDOM.insertAdjacentHTML('beforeend', 
-                `Current city: ${body.city_name} 
-                <img id="favorites" src="assets/img/favorites-button.png">
-                `);
-                document.querySelector('#favorites').addEventListener('click', function(){
-                    historyPush(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item', 'favorites');
-                });
-    
-                for(let i=0; i< data.period; i++){
-                    dataDOM.mainDOM.insertAdjacentHTML('beforeend',
-                    //template with weather data 
-                    `<div class="main-content-box main-content-box_count-${i}">
-                        <div class="main-content-box_values">
-                            <p>
-                                <span class="number-caption">${body.data[i].temp}</span> ${data.unitsDisplay}
-                                <p class="title-caption">avg. temp.</p> 
-                            </p>
-                            <object data="assets/icons/${body.data[i].weather.icon}.svg" type=""></object>
-                            <p class="title-caption">${body.data[i].weather.description}</p> 
-                        </div>
-                        <p class="date">${body.data[i].datetime.split('-').reverse().join('.')}</p> 
-                        <p>max. temp.: ${body.data[i].max_temp} ${data.unitsDisplay}</p>
-                        <p>min. temp.: ${body.data[i].min_temp} ${data.unitsDisplay}</p>
-                        <p>feels like, max: ${body.data[i].app_max_temp} ${data.unitsDisplay}</p>
-                        <p>feels like, min: ${body.data[i].app_min_temp} ${data.unitsDisplay}</p>
-                        <p>wind: ${body.data[i].wind_spd} m/s</p>
-                        <p>precipitation: ${body.data[i].pop} %</p>
-                    </div>
-                    `);
-                }
+                cityRender(body)
             };
             return body;
         })

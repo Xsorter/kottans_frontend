@@ -50,17 +50,17 @@
 
         //run fetch method, we have city in URL
         if(parsedUrl.searchParams.get("city")){
-            citySearch(data.city);
+            findCity(data.city);
         };
 
         //get values from localstorage, if any
         if(localStorage.getItem('history')) {
             data.historyObj = JSON.parse(localStorage.getItem('history'));
-            historyShow(dataDOM.historyDOM, data.historyObj, 'history-item');
+            showHistory(dataDOM.historyDOM, data.historyObj, 'history-item');
         }
         if(localStorage.getItem('favorites')) {
             data.favoriteObj = JSON.parse(localStorage.getItem('favorites'));
-            historyShow(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item');
+            showHistory(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item');
         }
 
         dataDOM.buttonHistoryClear.addEventListener('click', ()=>{
@@ -75,41 +75,41 @@
             data.units = dataDOM.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
             data.unitsDisplay = data.units === 'M' ? 'C' : 'F'; 
             if(data.city){
-                citySearch(data.city);
+                findCity(data.city);
             }
         });
 
         dataDOM.periodDOM.addEventListener('change', ()=>{
             data.period = +dataDOM.periodDOM.options[document.querySelector('#period').selectedIndex].value;
             if(data.city){
-                citySearch(data.city);
+                findCity(data.city);
             }
         });
 
         dataDOM.formDOM.addEventListener('submit', (e)=>{
             e.preventDefault();
             data.city = dataDOM.inputDOM.value;
-            citySearch(data.city);
+            findCity(data.city);
             if(data.city){
-                historyPush(dataDOM.historyDOM, data.historyObj, 'history-item', 'history');
+                pushHistory(dataDOM.historyDOM, data.historyObj, 'history-item', 'history');
             }
             return false
         });
     }
     
     //localstorage methods for history and favorites
-    function historyPush(DOM, obj, cssClass, localStorageKey){
+    function pushHistory(DOM, obj, cssClass, localStorageKey){
         if(localStorage.getItem('favorites') && 
             localStorageKey === 'favorites' && 
             JSON.parse(localStorage.getItem('favorites')).city.indexOf(data.city) != -1){
         }else{
             obj.city.push(data.city);
             localStorage.setItem(localStorageKey, JSON.stringify(obj));
-            historyShow(DOM, obj, cssClass);
+            showHistory(DOM, obj, cssClass);
         }
     }
 
-    function historyShow(DOM, obj, cssClass){
+    function showHistory(DOM, obj, cssClass){
         DOM.innerHTML = '';
         if(obj){
             obj.city.map((i)=>{
@@ -118,7 +118,7 @@
             for(let i=0; i<document.querySelectorAll(`.${cssClass}`).length; i++){
                 document.querySelectorAll(`.${cssClass}`)[i].addEventListener('click', function(){
                     data.city = this.innerHTML;
-                    citySearch(this.innerHTML);
+                    findCity(this.innerHTML);
                 })
             }
         }
@@ -138,12 +138,12 @@
         <img id="favorites" src="assets/img/favorites-button.png">
         `);
         document.querySelector('#favorites').addEventListener('click', function(){
-            historyPush(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item', 'favorites');
+            pushHistory(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item', 'favorites');
         });
     }
 
     //push current city to URL
-    function urlPush (city){
+    function pushUrl (city){
         let state = {};
         let title = city;
         let url = `index.html?city=${city}`;
@@ -152,7 +152,7 @@
     }
     
     //render method
-    function cityRender (body){
+    function renderCity (body){
         dataDOM.loaderDOM.classList.add('none');
         createFavoriteButton(body);
 
@@ -182,11 +182,11 @@
     }
 
 
-    function citySearch (city){
+    function findCity (city){
         dataDOM.mainDOM.innerHTML = "";
         dataDOM.titleDOM.innerHTML = "";
         dataDOM.loaderDOM.classList.remove('none'); //show loader
-        urlPush(city); 
+        pushUrl(city); 
         
         fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&units=${data.units}&key=${data.secretKey}`)
         .then(function(response) {
@@ -203,7 +203,7 @@
          })
         .then(function(body) {
             if(body){
-                cityRender(body)
+                renderCity(body)
             };
             return body;
         })
@@ -213,7 +213,7 @@
         }); 
     }
 
-})();
+})(); 
 
 
 

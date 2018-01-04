@@ -63,7 +63,6 @@
             historyShow(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item');
         }
 
-        //add event listeners to DOM elements
         dataDOM.buttonHistoryClear.addEventListener('click', ()=>{
             clearLocalStorage(dataDOM.historyDOM, 'history')
         });
@@ -72,14 +71,14 @@
             clearLocalStorage(dataDOM.favoritesDOM, 'favorites')
         });
 
-        //get values from search filter (units and period)
         dataDOM.unitsDOM.addEventListener('change', ()=>{
             data.units = dataDOM.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
-            data.unitsDisplay = data.units === 'M' ? 'C' : 'F'; //find unit letter for DOM (C or F)
+            data.unitsDisplay = data.units === 'M' ? 'C' : 'F'; 
             if(data.city){
                 citySearch(data.city);
             }
         });
+
         dataDOM.periodDOM.addEventListener('change', ()=>{
             data.period = +dataDOM.periodDOM.options[document.querySelector('#period').selectedIndex].value;
             if(data.city){
@@ -87,7 +86,6 @@
             }
         });
 
-        //fire fetch method on search field
         dataDOM.formDOM.addEventListener('submit', (e)=>{
             e.preventDefault();
             data.city = dataDOM.inputDOM.value;
@@ -99,13 +97,11 @@
         });
     }
     
-    /**localstorage methods for history and favorites
-      first, we push data to localstorage**/
+    //localstorage methods for history and favorites
     function historyPush(DOM, obj, cssClass, localStorageKey){
         if(localStorage.getItem('favorites') && 
             localStorageKey === 'favorites' && 
             JSON.parse(localStorage.getItem('favorites')).city.indexOf(data.city) != -1){
-            //check if city already in favorites
         }else{
             obj.city.push(data.city);
             localStorage.setItem(localStorageKey, JSON.stringify(obj));
@@ -113,15 +109,12 @@
         }
     }
 
-    /*and then, read the data*/ 
     function historyShow(DOM, obj, cssClass){
         DOM.innerHTML = '';
         if(obj){
-            //build list from localstorage data
             obj.city.map((i)=>{
                 DOM.insertAdjacentHTML('beforeend', `<li class="${cssClass}">${i}</li>`);
             });
-            
             for(let i=0; i<document.querySelectorAll(`.${cssClass}`).length; i++){
                 document.querySelectorAll(`.${cssClass}`)[i].addEventListener('click', function(){
                     data.city = this.innerHTML;
@@ -149,7 +142,7 @@
         });
     }
 
-    //here we push current city to URL
+    //push current city to URL
     function urlPush (city){
         let state = {};
         let title = city;
@@ -160,14 +153,12 @@
     
     //render method
     function cityRender (body){
-        //hide loader, when loaded
         dataDOM.loaderDOM.classList.add('none');
-
-        //insert favorite button
         createFavoriteButton(body);
 
         for(let i=0; i< data.period; i++){
             dataDOM.mainDOM.insertAdjacentHTML('beforeend',
+
             //template with weather data 
             `<div class="main-content-box main-content-box_count-${i}">
                 <div class="main-content-box_values">
@@ -190,7 +181,7 @@
         }
     }
 
-    //fetch method
+
     function citySearch (city){
         dataDOM.mainDOM.innerHTML = "";
         dataDOM.titleDOM.innerHTML = "";

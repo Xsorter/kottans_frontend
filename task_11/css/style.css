@@ -50,6 +50,7 @@ body{
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    margin-bottom: 6em;
     background: #fff;
     border: 1px solid #c9d0e1;
     border-radius: 3px;
@@ -140,7 +141,7 @@ body{
     margin-top: 0.2em
 }
 
-.main__wrapper-head-text p{
+.main__wrapper-head-text p, address{
     margin-top: 0.5em;
 }
 
@@ -162,5 +163,64 @@ body{
     font-size: 130%;
     left: -1.5em;
     top: 0.8em;
+}
+
+
+
+
+
+
+
+
+
+
+.main__top-options{
+    padding: 5em 1.5em 3em 1.5em;
+}
+
+.main__top-options h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main__top-options h2 span{
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
+
+.main__top-options .radio_wrapper{
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__top-options .radio_wrapper div{
+    background: orange;
+    height: 200px;
+    width: 30%;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 840px),(min-resolution:270dpi){
+    .main__top-options .radio_wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main__top-options .radio_wrapper div{
+        margin-top: 1em;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 640px),(min-resolution:270dpi){
+    .main__top-options .radio_wrapper div{
+        width: 100%;
+    }
 }
 

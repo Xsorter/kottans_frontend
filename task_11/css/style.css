@@ -1,5 +1,6 @@
 body{
     background: #eceef4;
+    counter-reset: section;
 }
 
 
@@ -172,7 +173,7 @@ body{
 
 
 
-
+/*Top block*/
 
 .main__top-options{
     padding: 5em 1.5em 3em 1.5em;
@@ -186,7 +187,7 @@ body{
 }
 
 .main__top-options h2 span{
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #c9d0e1;
     padding-bottom: 5px;
 }
 
@@ -200,10 +201,22 @@ body{
 }
 
 .main__top-options .radio_wrapper div{
-    background: orange;
-    height: 200px;
+    background: #f7f7fa;
+    border: 1px solid #c9d0e1;
     width: 30%;
     border-radius: 5px;
+}
+
+.main__top-options .radio_wrapper div label{
+    padding: 2em 0;
+}
+
+.main__top-options .radio_wrapper img{
+    max-width: 85px;
+}
+
+.main__top-options .radio_wrapper figcaption{
+    font-weight: 700;
 }
 
 @media screen and (max-width: 840px),(min-resolution:270dpi){
@@ -224,3 +237,194 @@ body{
     }
 }
 
+
+
+
+
+
+
+
+
+.content__wrapper-outer{
+    padding: 0 5em;
+}
+
+
+.content__wrapper-half-box{
+    max-width: 980px;
+    margin: 0 auto;
+    background: yellowgreen;
+}
+
+.content__wrapper-half .content__wrapper{
+    max-width: none;
+    background: blueviolet;
+    display: inline-block;
+    width: 49.5%;
+}
+
+.content__wrapper{
+    background: red;
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    margin-top: 3em;
+}
+
+.content__wrapper h2{
+    font-size: 135%;
+    font-weight: 700;
+}
+
+.content__wrapper h2 span{
+    font-size: 75%;
+    font-weight: 400;
+}
+
+.content__wrapper .upload_wrapper{
+    position: relative;
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid #c9d0e1;
+    background: #f7f7fa;
+    margin-top: 2em;
+    padding: 1em 1em;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: all ease-out 0.2s;
+}
+
+.content__wrapper .upload_wrapper:hover{
+    opacity: 0.6;
+}
+
+.content__wrapper .upload_wrapper input[type="file"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.content__wrapper .upload_list{
+    border: 1px solid #e6e8ee;
+    margin-top: 2em;
+    padding: 2em;
+    border-radius: 3px;
+}
+
+.content__wrapper .upload_list table{
+    width: 100%;
+}
+
+.content__wrapper .upload_list table th{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.content__wrapper .upload_list table th:not(:last-child){
+    text-align: left;
+}
+
+.content__wrapper .upload_list table td,th{
+    padding: 0.5em;
+}
+
+.content__wrapper .upload_list table td:last-child{
+    text-align: center;
+}
+
+.content__wrapper .upload_list table td .fas{
+    padding: 0 1em 0 0;
+    transition: all ease-out 0.2s;
+    cursor: pointer;
+}
+
+.content__wrapper .upload_list table td .fas:hover{
+    opacity: 0.6;
+}
+
+.content__wrapper .upload_list table td .fa-trash{
+    padding: 0;
+}
+
+.content__wrapper:before{
+    counter-increment: section;
+    content: counter(section);
+    border: 1px solid #6e768f;
+    color: #6e768f;
+    font-weight: 700;
+    font-size: 150%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: -70px;
+    top: -11px;
+}
+
+@media screen and (max-width: 1200px),(min-resolution:270dpi){
+    .content__wrapper:before{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        left: -40px;
+        top: -2px;
+    }
+
+    .content__wrapper-outer{
+        padding: 0 3em;
+    }
+
+    
+    
+    .content__wrapper-half .content__wrapper{
+        display: block;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 800px),(min-resolution:270dpi){
+    .content__wrapper .upload_list{
+        padding: 2em 0.5em;
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 560px),(min-resolution:270dpi){
+    .content__wrapper:before{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        left: 0px;
+        top: -20px;
+    }
+
+    .content__wrapper{
+        padding: 1em;
+    }
+
+    .content__wrapper-outer{
+        padding: 0 1em;
+    }
+
+    .content__wrapper .upload_list table{
+        overflow-x: auto;
+		display: block;
+    }
+
+    .content__wrapper .upload_list table td,th{
+        padding: 0.2em;
+    }
+
+    .content__wrapper .upload_list table td:first-child{
+        min-width: 180px;
+    }
+
+}

@@ -83,6 +83,45 @@ table {
     padding: 0 0.5em;
 }
 
+/*custom select*/
+
+.select__custom{
+    background: #f7f7fa;
+    border: none;
+    color: #9098b7;
+    padding: 1em 4em 1em 2em;
+    text-align-last: center; /*for Chrome only*/
+    appearance:none;
+    -moz-appearance:none; 
+    -webkit-appearance:none;
+}
+
+.select-container{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #d7d8e0;
+    border-radius: 3px;
+}
+
+.select-container:after {
+    content: '▼';
+    color: #9098b8;
+    right: 15px;
+    top: 0px;
+    height: 40px;
+    padding: 18px 0px 0px 13px;
+    border-left: 1px solid #d7d8e0;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+display: none;
+}
+
+
+
 /*custom radio buttons*/
 
 .radio_custom input[type="radio"]{

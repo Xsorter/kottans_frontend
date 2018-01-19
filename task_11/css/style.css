@@ -284,7 +284,7 @@ body{
 
 .content__wrapper .upload_wrapper{
     position: relative;
-    max-width: 200px;
+    max-width: 210px;
     text-align: center;
     border: 1px solid #c9d0e1;
     background: #f7f7fa;
@@ -382,7 +382,6 @@ body{
     }
 
     
-    
     .content__wrapper-half .content__wrapper{
         display: block;
         width: 100%;
@@ -427,4 +426,27 @@ body{
         min-width: 180px;
     }
 
+}
+
+
+
+
+
+
+
+.content__wrapper .flex_row-start{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2em;
+    background: yellow;
+}
+
+.content__wrapper-language p{
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 3em;
+    text-align: right;
+    margin: 0 1em 0 0;
 }

@@ -115,7 +115,6 @@ table {
     pointer-events: none;
 }
 
-/* IE11 hide native button (thanks Matt!) */
 select::-ms-expand {
 display: none;
 }

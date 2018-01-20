@@ -253,18 +253,18 @@ body{
 .content__wrapper-half-box{
     max-width: 980px;
     margin: 0 auto;
-    background: yellowgreen;
+    /*background: yellowgreen;*/
 }
 
 .content__wrapper-half .content__wrapper{
     max-width: none;
-    background: blueviolet;
+    /*background: blueviolet;*/
     display: inline-block;
     width: 49.5%;
 }
 
 .content__wrapper{
-    background: red;
+    /*background: red;*/
     position: relative;
     width: 100%;
     max-width: 980px;
@@ -440,7 +440,6 @@ body{
     flex-wrap: wrap;
     align-items: center;
     margin-top: 2em;
-    background: yellow;
 }
 
 .content__wrapper-language p{
@@ -448,5 +447,42 @@ body{
     font-weight: 700;
     width: 3em;
     text-align: right;
-    margin: 0 1em 0 0;
 }
+
+.content__wrapper-language .select-container{
+    margin: 0 0 0 1em;
+}
+
+.content__wrapper-language i{
+    color: #9098b7;
+}
+
+.content__wrapper-language button{
+    margin: 0 0 0 2em;
+}
+
+@media screen and (max-width: 760px),(min-resolution:270dpi){
+    .content__wrapper .flex_row-start{
+        justify-content: center;
+        margin-top: 0em;
+    }
+    .content__wrapper-language .select-container{
+        margin: 0.5em 0 0em 0.5em;
+    }
+    .content__wrapper-language button{
+        margin: 0.5em 0 0 0em;
+    }
+}
+
+@media screen and (max-width: 400px),(min-resolution:270dpi){
+    .content__wrapper-language p{
+        margin-right: 1em;
+    }
+    .content__wrapper .flex_row-start{
+        justify-content: flex-start;
+        margin-top: 0em;
+    }
+    .content__wrapper-language .select-container{
+        margin-left: 0;
+    }
+} 

@@ -624,10 +624,10 @@ input:not([type="radio"]):valid+label:before{
     color: #fff;
     content: "\f058";
     position: absolute;
-    top: -32px;
+    top: -30px;
     right: 5px;
-    font-size: 110%;
-    width: 17px;
+    font-size: 100%;
+    width: 15px;
     padding: 0 3px;
     border-radius: 100%;
     text-align: center;
@@ -639,10 +639,10 @@ input:not([type="radio"]):invalid+label:before{
     color: #fff;
     content: "\f057";
     position: absolute;
-    top: -32px;
+    top: -30px;
     right: 5px;
-    font-size: 110%;
-    width: 17px;
+    font-size: 100%;
+    width: 15px;
     padding: 0 3px;
     border-radius: 100%;
     text-align: center;

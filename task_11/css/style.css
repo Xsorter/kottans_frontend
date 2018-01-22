@@ -459,13 +459,15 @@ body{
     padding: 1em 3em;
     margin-top: 2em;
     border: 1px solid #e6e8ee;
+    position: relative;
 }
-.content__wrapper .range__wrapper legend h4{
+.content__wrapper .range__wrapper legend .legend-title{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 90%;
 }
-.content__wrapper .range__wrapper legend p{
+.content__wrapper .range__wrapper legend .legend-text{
+    display: block;
     font-size: 95%;
     margin-top: 1em;
     color: #aea5b8;
@@ -473,6 +475,7 @@ body{
 .content__wrapper .range__wrapper legend i{
     position: absolute;
     left: 1.5em;
+    top: 18px;
 }
 
 

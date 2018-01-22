@@ -19,7 +19,7 @@
     </header>
 
     <main class="main__wrapper">
-        <form action="">
+        <form>
             <section class="main__wrapper-head">
                 <div class="main__wrapper-head-stat">
                     <p class="main__wrapper-head-title">
@@ -73,40 +73,40 @@
                     <div class="radio_custom">
                         <input id="custom-radio-top-1" name="custom-radio-top" checked type="radio"/>
                         <label for="custom-radio-top-1">
-                            <figure>
+                            <span>
                                 <img src="img/website.png" alt="website radio button">
-                            </figure>
-                            <figcaption>
+                            </span>
+                            <span>
                                 Website
-                            </figcaption>
+                            </span>
                         </label>
                     </div>
                     <div class="radio_custom">
                         <input id="custom-radio-top-2" name="custom-radio-top" type="radio"/>
                         <label for="custom-radio-top-2">
-                            <figure>
+                            <span>
                                 <img src="img/document.png" alt="documents radio button">
-                            </figure>
-                            <figcaption>
+                            </span>
+                            <span>
                                 Documents
-                            </figcaption>
+                            </span>
                         </label>
                     </div>
                     <div class="radio_custom">
                         <input id="custom-radio-top-3" name="custom-radio-top" type="radio"/>
                         <label for="custom-radio-top-3">
-                            <figure>
+                            <span>
                                 <img src="img/social.png" alt="social account radio button">
-                            </figure>
-                            <figcaption>
+                            </span>
+                            <span>
                                 Social account
-                            </figcaption>
+                            </span>
                         </label>
                     </div>
                 </div>
             </section>
 
-            <section class="content__wrapper-outer">
+            <div class="content__wrapper-outer">
                 <section class="content__wrapper">
                     <h2>Upload your documents <span>(Doc, Docx, Text, PDF, Markdown)</span></h2>
                     <div class="upload_wrapper">
@@ -137,9 +137,9 @@
                         </table>
                     </div>
                 </section>
-            </section>
+            </div>
             
-            <section class="content__wrapper-outer">
+            <div class="content__wrapper-outer">
                 <section class="content__wrapper">
                     <h2>Choose your languages pairings</h2>
                     <div class="flex_row-start content__wrapper-language">
@@ -173,9 +173,9 @@
                         <button class="button button__bordered"> <i class="fas fa-plus"></i> Add</button>
                     </div>
                 </section>
-            </section>
+            </div>
 
-            <section class="content__wrapper-outer content__wrapper-half">
+            <div class="content__wrapper-outer content__wrapper-half">
                 <div class="content__wrapper-half-box">
                     <section class="content__wrapper">
                         <h2>Select your desired tone</h2>
@@ -213,20 +213,22 @@
                                 <li class="orange">Average</li>
                                 <li>Yesterday</li>
                             </ul>
-                            <legend>
-                                <i class="fas fa-info"></i>
-                                <h4>Timeline info</h4>
-                                <p>
-                                    With an <span class="orange">AVERAGE</span> timeline set up, our expert translator can take a 
-                                    reasonable amount of time perfecting your translation
-                                </p>
-                            </legend>      
+                            <fieldset>
+                                <legend>
+                                    <i class="fas fa-info"></i>
+                                    <h4>Timeline info</h4>
+                                    <p>
+                                        With an <span class="orange">AVERAGE</span> timeline set up, our expert translator can take a 
+                                        reasonable amount of time perfecting your translation
+                                    </p>
+                                </legend>        
+                            </fieldset>
                         </div>
                     </section>
                 </div>
-            </section>
+            </div>
 
-            <section class="content__wrapper-outer">
+            <div class="content__wrapper-outer">
                 <section class="content__wrapper">
                     <h2>Sign up and choose a payment method</h2>
                     <div class="content__bottom">
@@ -260,42 +262,42 @@
                             <div class="radio_custom">
                                 <input id="custom-radio-bottom-1" name="custom-radio-bottom" checked type="radio"/>
                                 <label for="custom-radio-bottom-1">
-                                    <figure>
+                                    <span>
                                         <img src="img/visa.png" alt="credit card radio button">
-                                    </figure>
+                                    </span>
                                 </label>
                             </div>
                             <div class="radio_custom">
                                 <input id="custom-radio-bottom-2" name="custom-radio-bottom"  type="radio"/>
                                 <label for="custom-radio-bottom-2">
-                                    <figure>
+                                    <span>
                                         <img src="img/paypal.png" alt="paypal radio button">
-                                    </figure>
+                                    </span>
                                 </label>
                             </div>
                             <div class="radio_custom">
                                 <input id="custom-radio-bottom-3" name="custom-radio-bottom"  type="radio"/>
                                 <label for="custom-radio-bottom-3">
-                                    <figure>
+                                    <span>
                                         <img src="img/amazon.png" alt="amazon radio button">
-                                    </figure>
+                                    </span>
                                 </label>
                             </div>
                         </div>
                         <div class="flex_row-start">
                             <div>
                                 <p class="title">Card number</p>
-                                <input type="text" name="card" id="card" title="enter 16 digit card number" value="" maxlength="16" placeholder="">
+                                <input type="text" name="card" id="card" title="enter 16 digit card number" maxlength="16" placeholder="">
                                 <label for="card"></label>
                             </div>
                             <div>
                                 <p class="title">Expiery date</p>
-                                <input name="expiery" id="expiery" title="enter expiery card date" value="" maxlength="10" placeholder="DD/MM/YYYY">
+                                <input name="expiery" id="expiery" title="enter expiery card date" maxlength="10" placeholder="DD/MM/YYYY">
                                 <label for="expiery"></label>
                             </div>
                             <div>
                                 <p class="title">Code</p>
-                                <input type="nubmer" maxlength="3" title="enter CVV card code" name="code" id="code" value="">
+                                <input type="nubmer" maxlength="3" title="enter CVV card code" name="code" id="code">
                                 <label for="code"></label>
                             </div>
                         </div>
@@ -307,7 +309,7 @@
                         </div>
                     </div>
                 </section>
-            </section>
+            </div>
         </form>
     </main>
 

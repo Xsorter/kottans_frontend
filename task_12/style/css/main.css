@@ -1,0 +1,129 @@
+/* line 1, ../sass/helpers.sass */
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+/* line 10, ../sass/helpers.sass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 30, ../sass/helpers.sass */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 34, ../sass/helpers.sass */
+body {
+  line-height: 1;
+}
+
+/* line 37, ../sass/helpers.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 40, ../sass/helpers.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 43, ../sass/helpers.sass */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 48, ../sass/helpers.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, ../sass/header.sass */
+.header {
+  background: red;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 6, ../sass/header.sass */
+.header__time {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+/* line 10, ../sass/header.sass */
+.header__logo {
+  width: 100px;
+  height: 100px;
+  background: green;
+}
+/* line 14, ../sass/header.sass */
+.header__login {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+
+/* line 1, ../sass/content.sass */
+.main {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2em;
+  background: #f34e45;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+/* line 10, ../sass/content.sass */
+.main section {
+  background: #541fed;
+  min-height: 350px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 23, ../sass/content.sass */
+.main__box-image {
+  background: #32fdde;
+  width: 100%;
+  max-width: 280px;
+  min-height: 280px;
+}
+
+/* line 1, ../sass/footer.sass */
+.footer {
+  height: 100px;
+  background: #000;
+  width: 100%;
+}

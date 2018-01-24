@@ -1,0 +1,25 @@
+/* line 1, ../sass/header.sass */
+.header {
+  background: red;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 6, ../sass/header.sass */
+.header__time {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+/* line 10, ../sass/header.sass */
+.header__logo {
+  width: 100px;
+  height: 100px;
+  background: green;
+}
+/* line 14, ../sass/header.sass */
+.header__login {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}

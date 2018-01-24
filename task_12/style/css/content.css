@@ -1,0 +1,31 @@
+/* line 1, ../sass/content.sass */
+.main {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2em;
+  background: #f34e45;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+/* line 10, ../sass/content.sass */
+.main section {
+  background: #541fed;
+  min-height: 350px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 23, ../sass/content.sass */
+.main__box-image {
+  background: #32fdde;
+  width: 100%;
+  max-width: 280px;
+  min-height: 280px;
+}

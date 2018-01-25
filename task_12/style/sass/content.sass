@@ -12,8 +12,8 @@
         min-height: 350px
         width: 100%
         max-width: 300px
-        margin-bottom: 2em
-        padding: 0.5em
+        margin: 0em 1em 2em 0em
+        padding: 1.5em 1em 1em 1em
         display: flex
         justify-content: flex-start
         align-items: center
@@ -23,8 +23,20 @@
         &-image 
             background: #32fdde
             width: 100%
-            max-width: 280px
-            min-height: 280px    
+            max-width: 250px
+            min-height: 250px
+            overflow: hidden
+            img 
+                width: 100% 
+                height: 100%
+                filter: contrast(150%) sepia(60%) hue-rotate(10deg)
+                transition: all ease-out 0.2s    
+                &:hover
+                    filter: none
+                    transform: scale(1.07)
+                @media screen and (max-width: 1024px),(min-resolution:270dpi)
+                    filter: none    
+                    
 
 
 

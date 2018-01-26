@@ -9,15 +9,20 @@
     flex-wrap: wrap
     section 
         background: #541fed
-        min-height: 350px
         width: 100%
         max-width: 300px
         margin: 0em 1em 2em 0em
-        padding: 1.5em 1em 1em 1em
+        padding: 1.5em 1em 1.5em 1em
         display: flex
         justify-content: flex-start
         align-items: center
         flex-direction: column
+        @media screen and (max-width: 1024px),(min-resolution:270dpi)
+            max-width: 350px
+            margin: 0 0 1em 0
+        @media screen and (max-width: 800px),(min-resolution:270dpi)
+            max-width: 500px
+            padding: 1em    
 
     &__box 
         &-image 
@@ -26,6 +31,11 @@
             max-width: 250px
             min-height: 250px
             overflow: hidden
+            @media screen and (max-width: 1024px),(min-resolution:270dpi)
+                max-width: 300px
+            @media screen and (max-width: 800px),(min-resolution:270dpi)
+                max-width: 450px
+                min-height: auto    
             img 
                 width: 100% 
                 height: 100%
@@ -35,7 +45,24 @@
                     filter: none
                     transform: scale(1.07)
                 @media screen and (max-width: 1024px),(min-resolution:270dpi)
-                    filter: none    
+                    filter: none
+
+        &-text 
+            background: green 
+            width: 100%
+            max-width: 250px 
+            padding: 0.5em
+            margin-top: 0.5em
+            @media screen and (max-width: 1024px),(min-resolution:270dpi)
+                max-width: 300px
+            @media screen and (max-width: 800px),(min-resolution:270dpi)
+                max-width: 450px
+
+            div 
+                display: flex
+                justify-content: space-between
+                &:nth-child(2)
+                    margin-top: 0.5em                        
                     
 
 

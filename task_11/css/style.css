@@ -238,7 +238,7 @@ body{
 }
 .content__wrapper .upload_wrapper{
     position: relative;
-    max-width: 210px;
+    max-width: 230px;
     text-align: center;
     border: 1px solid #c9d0e1;
     background: #f7f7fa;
@@ -285,12 +285,8 @@ body{
 }
 .content__wrapper .upload_list table td .fas{
     padding: 0 1em 0 0;
-    transition: all ease-out 0.2s;
-    cursor: pointer;
 }
-.content__wrapper .upload_list table td .fas:hover{
-    opacity: 0.6;
-}
+
 .content__wrapper .upload_list table td .fa-trash{
     padding: 0;
 }
@@ -377,11 +373,12 @@ body{
 }
 .content__wrapper-language .select-container{
     margin: 0 0 0 1em;
+    transition: all ease-out 0.2s;
 }
 .content__wrapper-language i{
     color: #9098b7;
 }
-.content__wrapper-language button{
+.content__wrapper-language .button__bordered{
     margin: 0 0 0 2em;
 }
 @media screen and (max-width: 760px),(min-resolution:270dpi){
@@ -460,6 +457,7 @@ body{
     margin-top: 2em;
     border: 1px solid #e6e8ee;
     position: relative;
+    max-width: 500px;
 }
 .content__wrapper .range__wrapper legend .legend-title{
     text-transform: uppercase;

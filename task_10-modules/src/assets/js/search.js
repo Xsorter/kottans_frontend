@@ -12,6 +12,23 @@ function pushUrl(city) {
   let parsedUrl = new URL(window.location.href);
 }
 
+function setError(error){
+  dataDOM.loaderDOM.classList.add("none");
+  if (error.status === 204) {
+    dataDOM.titleDOM.insertAdjacentHTML(
+      "beforeend",
+      `City not found. Please, try again.`
+    );
+  } else if (error.status === 400) {
+    dataDOM.titleDOM.insertAdjacentHTML(
+      "beforeend",
+      `Search field is empty. Please, enter city name`
+    );
+  } else {
+    dataDOM.titleDOM.insertAdjacentHTML("beforeend", `${error.statusText}`);
+  }
+}
+
 function findCity(city) {
   dataDOM.mainDOM.innerHTML = "";
   dataDOM.titleDOM.innerHTML = "";
@@ -25,23 +42,8 @@ function findCity(city) {
       }
       return body;
     })
-
-    .catch(function(error) {
-      dataDOM.loaderDOM.classList.add("none");
-      if (error.status === 204) {
-        dataDOM.titleDOM.insertAdjacentHTML(
-          "beforeend",
-          `City not found. Please, try again.`
-        );
-      } else if (error.status === 400) {
-        dataDOM.titleDOM.insertAdjacentHTML(
-          "beforeend",
-          `Search field is empty. Please, enter city name`
-        );
-      } else {
-        dataDOM.titleDOM.insertAdjacentHTML("beforeend", `${error.statusText}`);
-      }
-    });
+    .catch(setError);
 }
 
 export { findCity };
+

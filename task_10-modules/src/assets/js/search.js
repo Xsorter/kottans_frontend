@@ -5,10 +5,8 @@ import { pushHistory, showHistory, clearLocalStorage } from "./localStorage";
 
 //push current city to URL
 function pushUrl(city) {
-  let state = {};
-  let title = city;
   let url = `index.html?city=${city}`;
-  history.pushState(state, title, url);
+  history.pushState(null, null, url);
   let parsedUrl = new URL(window.location.href);
 }
 

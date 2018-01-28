@@ -1,24 +1,68 @@
 /* line 1, ../sass/header.sass */
 .header {
-  background: red;
-  padding: 1em;
+  background: linear-gradient(to right, #e65c00, #f9d423);
+  padding: 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 /* line 7, ../sass/header.sass */
 .header__time {
-  background: yellow;
+  padding: 0.3em 0.5em;
+  color: #fff;
+  font-size: 18px;
 }
-/* line 9, ../sass/header.sass */
-.header__logo {
-  width: 100px;
-  height: 100px;
-  background: green;
+@media screen and (max-width: 480px), (min-resolution: 270dpi) {
+  /* line 7, ../sass/header.sass */
+  .header__time {
+    order: 2;
+  }
 }
-/* line 13, ../sass/header.sass */
+@media screen and (max-width: 480px), (min-resolution: 270dpi) {
+  /* line 13, ../sass/header.sass */
+  .header__logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+    order: 1;
+  }
+}
+/* line 19, ../sass/header.sass */
+.header__logo img {
+  max-width: 100px;
+  filter: drop-shadow(5px 4px 3px rgba(0, 0, 0, 0.65));
+}
+/* line 22, ../sass/header.sass */
 .header__login {
-  width: 100px;
-  height: 100px;
-  background: blue;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.3em 0.5em;
+  border-radius: 3px;
+  color: #555;
+  transition: all ease-out 0.2s;
+}
+/* line 28, ../sass/header.sass */
+.header__login a {
+  text-decoration: none;
+  color: #424242;
+}
+/* line 31, ../sass/header.sass */
+.header__login a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+/* line 34, ../sass/header.sass */
+.header__login:hover {
+  background: none;
+}
+@media screen and (max-width: 480px), (min-resolution: 270dpi) {
+  /* line 22, ../sass/header.sass */
+  .header__login {
+    order: 3;
+  }
+}
+@media screen and (max-width: 480px), (min-resolution: 270dpi) {
+  /* line 1, ../sass/header.sass */
+  .header {
+    flex-wrap: wrap;
+  }
 }

@@ -1,32 +1,42 @@
-.main 
+.main
+    background: #fff
     width: 100% 
     max-width: 1160px
     margin: 0 auto
     padding: 2em
-    background: #f34e45
-    display: flex
-    justify-content: space-around
-    flex-wrap: wrap
-    section 
-        background: #541fed
-        width: 100%
-        max-width: 300px
-        margin: 0em 1em 2em 0em
-        padding: 1.5em 1em 1.5em 1em
+    filter: drop-shadow(4px 5px 6px rgba(0, 0, 0, 0.2))
+    &__wrapper
         display: flex
-        justify-content: flex-start
-        align-items: center
-        flex-direction: column
-        @media screen and (max-width: 1024px),(min-resolution:270dpi)
-            max-width: 350px
-            margin: 0 0 1em 0
-        @media screen and (max-width: 800px),(min-resolution:270dpi)
-            max-width: 500px
-            padding: 1em    
+        justify-content: space-around
+        flex-wrap: wrap
+        section 
+            background: #efefef
+            width: 100%
+            max-width: 300px
+            margin: 0em 1em 2em 0em
+            padding: 1.5em 1em 1.5em 1em
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            flex-direction: column
+            position: relative
+            @media screen and (max-width: 1024px),(min-resolution:270dpi)
+                max-width: 350px
+                margin: 0 0 1em 0
+            @media screen and (max-width: 800px),(min-resolution:270dpi)
+                max-width: 500px
+                padding: 1em
+            .image-absolute
+                position: absolute
+                width: 100px
+                top: -15px
+                right: -25px       
+                @media screen and (max-width: 800px),(min-resolution:270dpi)
+                    display: none
 
     &__box 
         &-image 
-            background: #32fdde
+            background: #fff
             width: 100%
             max-width: 250px
             min-height: 250px
@@ -43,16 +53,17 @@
                 transition: all ease-out 0.2s    
                 &:hover
                     filter: none
-                    transform: scale(1.07)
+                    transform: scale(1.15)
                 @media screen and (max-width: 1024px),(min-resolution:270dpi)
                     filter: none
 
         &-text 
-            background: green 
+            background: #fff 
             width: 100%
             max-width: 250px 
             padding: 0.5em
             margin-top: 0.5em
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
             @media screen and (max-width: 1024px),(min-resolution:270dpi)
                 max-width: 300px
             @media screen and (max-width: 800px),(min-resolution:270dpi)

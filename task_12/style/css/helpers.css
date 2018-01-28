@@ -9,10 +9,15 @@
   padding: 0 0.5em;
 }
 
+/* line 8, ../sass/helpers.sass */
+body {
+  background: #fff6da;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
  * v2.0 | 20110126
  * License: none (public domain) */
-/* line 13, ../sass/helpers.sass */
+/* line 16, ../sass/helpers.sass */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -34,36 +39,53 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-/* line 33, ../sass/helpers.sass */
+/* line 36, ../sass/helpers.sass */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 37, ../sass/helpers.sass */
+/* line 40, ../sass/helpers.sass */
 body {
   line-height: 1;
 }
 
-/* line 40, ../sass/helpers.sass */
+/* line 43, ../sass/helpers.sass */
 ol, ul {
   list-style: none;
 }
 
-/* line 43, ../sass/helpers.sass */
+/* line 46, ../sass/helpers.sass */
 blockquote, q {
   quotes: none;
 }
 
-/* line 46, ../sass/helpers.sass */
+/* line 49, ../sass/helpers.sass */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: "";
   content: none;
 }
 
-/* line 51, ../sass/helpers.sass */
+/* line 54, ../sass/helpers.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/*positioning */
+/* line 63, ../sass/helpers.sass */
+.flex {
+  display: flex;
+}
+/* line 65, ../sass/helpers.sass */
+.flex_center {
+  justify-content: center;
+  align-items: center;
+}
+
+/*margin */
+/* line 71, ../sass/helpers.sass */
+.m-b-2 {
+  margin-bottom: 2em;
 }

@@ -1,16 +1,39 @@
 .header 
-    background: red 
-    padding: 1em
+    background: linear-gradient(to right, #e65c00, #f9d423) 
+    padding: 0.5em
     display: flex
     justify-content: space-between
     align-items: center
     &__time  
-        background: yellow 
-    &__logo
-        width: 100px 
-        height: 100px
-        background: green 
+        padding: 0.3em 0.5em 
+        color: #fff
+        font-size: 18px
+        @media screen and (max-width: 480px),(min-resolution:270dpi)
+            order: 2
+    &__logo 
+        @media screen and (max-width: 480px),(min-resolution:270dpi)    
+            width: 100%         
+            text-align: center
+            margin-bottom: 0.5em
+            order: 1
+        img 
+            max-width: 100px
+            filter: drop-shadow(5px 4px 3px rgba(0,0,0,0.65))
     &__login 
-        width: 100px 
-        height: 100px
-        background: blue             
+        background: rgba(255,255,255,0.85)
+        padding: 0.3em 0.5em 
+        border-radius: 3px
+        color: #555
+        transition: all ease-out 0.2s
+        a 
+            text-decoration: none 
+            color: #424242
+            &:hover 
+                text-decoration: underline
+                font-weight: 700
+        &:hover
+            background: none            
+        @media screen and (max-width: 480px),(min-resolution:270dpi)
+            order: 3
+    @media screen and (max-width: 480px),(min-resolution:270dpi)             
+        flex-wrap: wrap 

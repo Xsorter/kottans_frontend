@@ -140,7 +140,6 @@ table {
 /* line 31, ../sass/header.sass */
 .header__login a:hover {
   text-decoration: underline;
-  font-weight: 700;
 }
 /* line 34, ../sass/header.sass */
 .header__login:hover {

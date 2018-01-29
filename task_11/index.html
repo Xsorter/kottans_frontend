@@ -68,7 +68,7 @@
                 <h2>
                     <span>Select what you want to translate</span>        
                 </h2>
-
+                
                 <div class="radio_wrapper">
                     <div class="radio_custom">
                         <input id="custom-radio-top-1" name="custom-radio-top" checked type="radio"/>
@@ -80,6 +80,7 @@
                                 Website
                             </span>
                         </label>
+                        <span class="mark-icon none"></span>
                     </div>
                     <div class="radio_custom">
                         <input id="custom-radio-top-2" name="custom-radio-top" type="radio"/>
@@ -91,6 +92,7 @@
                                 Documents
                             </span>
                         </label>
+                        <span class="mark-icon none"></span>
                     </div>
                     <div class="radio_custom">
                         <input id="custom-radio-top-3" name="custom-radio-top" type="radio"/>
@@ -102,6 +104,7 @@
                                 Social account
                             </span>
                         </label>
+                        <span class="mark-icon none"></span>
                     </div>
                 </div>
             </section>
@@ -196,6 +199,7 @@
                                     <i class="fas fa-comments"></i>
                                     <span>Friendly/Casual</span>
                                 </label>
+                                <span class="mark-icon none"></span>
                             </div>
                             <div class="radio_custom">
                                 <input id="custom-radio-middle-2" name="custom-radio-middle" checked type="radio"/>
@@ -203,6 +207,7 @@
                                     <i class="fas fa-suitcase"></i>
                                     <span>Corporate/Pro</span>
                                 </label>
+                                <span class="mark-icon none"></span>
                             </div>
                             <div class="radio_custom">
                                 <input id="custom-radio-middle-3" name="custom-radio-middle" type="radio"/>
@@ -210,6 +215,7 @@
                                     <i class="fas fa-bullhorn"></i>
                                     <span>Media/Formal</span>
                                 </label>
+                                <span class="mark-icon none"></span>
                             </div>
                         </div>
                     </section>
@@ -276,6 +282,7 @@
                                         <img src="img/visa.png" alt="credit card radio button">
                                     </span>
                                 </label>
+                                <span class="mark-icon none"></span>
                             </div>
                             <div class="radio_custom">
                                 <input id="custom-radio-bottom-2" name="custom-radio-bottom"  type="radio"/>
@@ -284,6 +291,7 @@
                                         <img src="img/paypal.png" alt="paypal radio button">
                                     </span>
                                 </label>
+                                <span class="mark-icon none"></span>
                             </div>
                             <div class="radio_custom">
                                 <input id="custom-radio-bottom-3" name="custom-radio-bottom"  type="radio"/>
@@ -292,22 +300,23 @@
                                         <img src="img/amazon.png" alt="amazon radio button">
                                     </span>
                                 </label>
+                                <span class="mark-icon none"></span>
                             </div>
                         </div>
                         <div class="flex_row-start">
                             <div>
                                 <p class="title">Card number</p>
-                                <input type="text" name="card" id="card" title="enter 16 digit card number" maxlength="16" placeholder="">
+                                <input type="text" name="card" class="card-input" id="card" title="enter 16 digit card number" maxlength="16" placeholder="">
                                 <label for="card"></label>
                             </div>
                             <div>
                                 <p class="title">Expiery date</p>
-                                <input name="expiery" id="expiery" title="enter expiery card date" maxlength="10" placeholder="DD/MM/YYYY">
+                                <input name="expiery" id="expiery" class="expiery-input" title="enter expiery card date" maxlength="10" placeholder="DD/MM/YYYY">
                                 <label for="expiery"></label>
                             </div>
                             <div>
                                 <p class="title">Code</p>
-                                <input type="text" pattern="\d{3,4}" title="enter CVV card code (3 or 4 digit)" name="code" id="code">
+                                <input type="text" pattern="\d{3,4}" class="code-input" title="enter CVV card code (3 or 4 digit)" name="code" id="code">
                                 <label for="code"></label>
                             </div>
                         </div>

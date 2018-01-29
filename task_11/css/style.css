@@ -39,9 +39,6 @@ body{
 
 
 
-
-
-
 /*MAIN*/
 .main__wrapper{
     width: 100%;
@@ -144,12 +141,6 @@ body{
 }
 
 
-
-
-
-
-
-
 /*Top block*/
 .main__top-options{
     padding: 5em 1.5em 3em 1.5em;
@@ -177,6 +168,7 @@ body{
     border: 1px solid #c9d0e1;
     width: 30%;
     border-radius: 5px;
+    position: relative;
 }
 .main__top-options .radio_wrapper div label{
     padding: 2em 0;
@@ -203,7 +195,6 @@ body{
         width: 100%;
     }
 }
-
 
 
 /*upload block*/
@@ -236,7 +227,7 @@ body{
     font-size: 75%;
     font-weight: 400;
 }
-.content__wrapper .upload_wrapper{
+.upload_wrapper{
     position: relative;
     max-width: 230px;
     text-align: center;
@@ -249,10 +240,10 @@ body{
     transition: all ease-out 0.2s;
     color: #9098b8;
 }
-.content__wrapper .upload_wrapper:hover{
+.upload_wrapper:hover{
     opacity: 0.6;
 }
-.content__wrapper .upload_wrapper input[type="file"]{
+.upload_wrapper input[type="file"]{
     position: absolute;
     top: 0;
     left: 0;
@@ -260,34 +251,34 @@ body{
     height: 100%;
     opacity: 0;
 }
-.content__wrapper .upload_list{
+.upload_list{
     border: 1px solid #e6e8ee;
     margin-top: 2em;
     padding: 2em;
     border-radius: 3px;
     color: #a5abc5;
 }
-.content__wrapper .upload_list table{
+.upload_list table{
     width: 100%;
 }
-.content__wrapper .upload_list table th{
+.upload_list table th{
     text-transform: uppercase;
     font-weight: 700;
 }
-.content__wrapper .upload_list table th:not(:last-child){
+.upload_list table th:not(:last-child){
     text-align: left;
 }
-.content__wrapper .upload_list table td,th{
+.upload_list table td,th{
     padding: 0.5em;
 }
-.content__wrapper .upload_list table td:last-child{
+.upload_list table td:last-child{
     text-align: center;
 }
-.content__wrapper .upload_list table td .fas{
+.upload_list table td .fas{
     padding: 0 1em 0 0;
 }
 
-.content__wrapper .upload_list table td .fa-trash{
+.upload_list table td .fa-trash{
     padding: 0;
 }
 .content__wrapper:before{
@@ -324,7 +315,7 @@ body{
     }
 }
 @media screen and (max-width: 800px),(min-resolution:270dpi){
-    .content__wrapper .upload_list{
+    .upload_list{
         padding: 2em 0.5em;
         font-size: 80%;
     }
@@ -343,18 +334,17 @@ body{
     .content__wrapper-outer{
         padding: 0 1em;
     }
-    .content__wrapper .upload_list table{
+    .upload_list table{
         overflow-x: auto;
 		display: block;
     }
-    .content__wrapper .upload_list table td,th{
+    .upload_list table td,th{
         padding: 0.2em;
     }
-    .content__wrapper .upload_list table td:first-child{
+    .upload_list table td:first-child{
         min-width: 180px;
     }
 }
-
 
 
 /*language block*/
@@ -389,7 +379,7 @@ body{
     .content__wrapper-language .select-container{
         margin: 0.5em 0 0em 0.5em;
     }
-    .content__wrapper-language button{
+    .content__wrapper-language .button__bordered{
         margin: 0.5em 0 0 0em;
     }
 }
@@ -408,14 +398,14 @@ body{
 
 
 /*tone block*/
-.content__wrapper .tone__wrapper{
+.tone__wrapper{
     display: flex;
     flex-direction: column;
     padding: 0 1em 0 0;
     margin: 1em 0 0 0;
     align-items: left;
 }
-.content__wrapper .tone__wrapper div{
+.tone__wrapper div{
     background: #f7f7fa;
     border: 1px solid #c9d0e1;
     border-radius: 5px;
@@ -423,12 +413,13 @@ body{
     height: 4em;
     min-width: 260px;
     color: #9098b8;
+    position: relative;
 }
-.content__wrapper .tone__wrapper .radio_custom label{
+.tone__wrapper .radio_custom label{
     flex-direction: row;
 }
 @media screen and (max-width: 1200px),(min-resolution:270dpi){
-    .content__wrapper .tone__wrapper{
+    .tone__wrapper{
         align-items: center;
         padding: 0;
     }
@@ -436,11 +427,11 @@ body{
 
 
 /*range block*/
-.content__wrapper .range__wrapper{
+.range__wrapper{
     margin-top: 1em;
     text-align: center;
 }
-.content__wrapper .range__wrapper ul{
+.range__wrapper ul{
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -448,10 +439,10 @@ body{
     margin-top: 0.5em;
     color: #a5abc5;
 }
-.content__wrapper .range__wrapper fieldset{
+.range__wrapper fieldset{
     margin-top: 2em;
 }
-.content__wrapper .range__wrapper legend{
+.range__wrapper legend{
     text-align: left;
     padding: 1em 3em;
     margin-top: 2em;
@@ -459,18 +450,18 @@ body{
     position: relative;
     max-width: 500px;
 }
-.content__wrapper .range__wrapper legend .legend-title{
+.range__wrapper legend .legend-title{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 90%;
 }
-.content__wrapper .range__wrapper legend .legend-text{
+.range__wrapper legend .legend-text{
     display: block;
     font-size: 95%;
     margin-top: 1em;
     color: #aea5b8;
 }
-.content__wrapper .range__wrapper legend i{
+.range__wrapper legend i{
     position: absolute;
     left: 1.5em;
     top: 18px;
@@ -479,45 +470,45 @@ body{
 
 
 /*bottom form block*/
-.content__wrapper .content__bottom{
+.content__bottom{
     margin: 1em 0 0 0;
 }
-.content__wrapper .content__bottom p:not(.title){
+.content__bottom p:not(.title){
     padding: 1em 0;
     color: #9fa5b8;
 }
-.content__wrapper .content__bottom p a{
+.content__bottom p a{
     padding: 1em 0;
     color: #9fa5b8;
 }
-.content__wrapper .content__bottom .flex_row-start{
+.content__bottom .flex_row-start{
     display: flex;
     justify-content: flex-start;
 }
-.content__wrapper .content__bottom .flex_row-end{
+.content__bottom .flex_row-end{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-top: 4em;
     flex-wrap: wrap;
 }
-.content__wrapper .content__bottom .flex_row-end label[for="agree"] a{
+.content__bottom .flex_row-end label[for="agree"] a{
     color: #6e768f;
 }
-.content__wrapper .content__bottom .flex_row-end .button__green{
+.content__bottom .flex_row-end .button__green{
     margin: 0 1em;
 }
 @media screen and (max-width: 760px),(min-resolution:270dpi){
-    .content__wrapper .content__bottom .flex_row-end{
+    .content__bottom .flex_row-end{
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
-    .content__wrapper .content__bottom .flex_row-end .button__green{
+    .content__bottom .flex_row-end .button__green{
         margin: 1em 0;
     }
 }
-.content__wrapper .content__bottom .flex_row-start .title{
+.content__bottom .flex_row-start .title{
     display: block;
     font-size: 85%;
     margin-left: 0.5em;
@@ -525,24 +516,22 @@ body{
     font-weight: 700;
     color: #a5abc5;
 }
-.content__wrapper .content__bottom .flex_row-start div{
+.content__bottom .flex_row-start div{
     margin: 0 1em 0 0;
 }
-.content__wrapper .content__bottom .flex_row-start input:not([type="radio"]){
+.content__bottom .flex_row-start input:not([type="radio"]){
     color: #6e768f;
     border: 1px solid #d7d9e0;
     border-radius: 3px;
     padding: 0.5em 2.5em 0.5em 1em;
 }
-.content__wrapper .content__bottom .flex_row-start
-input:not([type="radio"])+label{
+.content__bottom .flex_row-start input:not([type="radio"])+label{
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
 }
-.content__wrapper .content__bottom .flex_row-start
-input:not([type="radio"]):valid+label:before{
+.content__bottom .flex_row-start input:not([type="radio"]):valid+label:before{
     font-family: Font Awesome\ 5 Free;
     background: #76a7e1;
     color: #fff;
@@ -556,8 +545,7 @@ input:not([type="radio"]):valid+label:before{
     border-radius: 100%;
     text-align: center;
 }
-.content__wrapper .content__bottom .flex_row-start
-input:not([type="radio"]):invalid+label:before{
+.content__bottom .flex_row-start input:not([type="radio"]):invalid+label:before{
     font-family: Font Awesome\ 5 Free;
     background: red;
     color: #fff;
@@ -571,72 +559,60 @@ input:not([type="radio"]):invalid+label:before{
     border-radius: 100%;
     text-align: center;
 }
-.content__wrapper .content__bottom .flex_row-start
-#card+label:before{
-    font-family: Font Awesome\ 5 Free;
-    color: #d7d9e0;
-    content: "\f09d";
-    background: none;
-    position: absolute;
-    top: -32px;
-    right: 5px;
-    font-size: 110%;
-    width: 30px;
-    padding: 0 3px;
-    border-radius: 100%;
-    text-align: center;
-}
-.content__wrapper .content__bottom .flex_row-start #card{
+
+.card-input{
     min-width: 260px;
 }
-.content__wrapper .content__bottom .flex_row-start #expiery{
+.expiery-input{
     text-align: center;
     letter-spacing: 2px;
     padding: 0.5em 1em;
     max-width: 180px;
 }
-.content__wrapper .content__bottom .flex_row-start #code{
+.code-input{
     text-align: center;
-    padding: 0.5em 2em;
     max-width: 140px;
 }
-.content__wrapper .content__bottom .flex_row-start, #expiery+label:before, #code+label:before{
-    content: ''
+.card-input+label:before,
+.expiery-input+label:before, 
+.code-input+label:before{
+    display: none;
 }
-.content__wrapper .content__bottom .flex_row-start input[type="password"]{
+.content__bottom .flex_row-start input[type="password"]{
     font-weight: 700;
     letter-spacing: 5px;
 }
-.content__wrapper .content__bottom .flex_row-start .radio_custom{
+.content__bottom .flex_row-start .radio_custom{
     background: #f7f7fa;
     border: 1px solid #c9d0e1;
     width: 20%;
     border-radius: 5px;
+    position: relative;
 }
-.content__wrapper .content__bottom .flex_row-start .radio_custom label{
+.content__bottom .flex_row-start .radio_custom label{
     padding: 1.5em 0;
 }
-.content__wrapper .content__bottom .flex_row-start .radio_custom img{
+.content__bottom .flex_row-start .radio_custom img{
     max-height: 30px;
 }
 @media screen and (max-width: 960px),(min-resolution:270dpi){
-    .content__wrapper .content__bottom .flex_row-start{
+    .content__bottom .flex_row-start{
         justify-content: center;
         flex-wrap: wrap;
     }
-    .content__wrapper .content__bottom .flex_row-start .radio_custom{
+    .content__bottom .flex_row-start .radio_custom{
         width: 80%;
         margin-top: 1em;
     }
-    .content__wrapper .content__bottom .flex_row-start div{
+    .content__bottom .flex_row-start div{
         margin: 0 0 0 1em;
     }
 }
 @media screen and (max-width: 760px),(min-resolution:270dpi){
-    .content__wrapper .content__bottom .flex_row-start{
+    .content__bottom .flex_row-start{
         flex-direction: column;
     }
-    .content__wrapper .content__bottom .flex_row-start div{
+    .content__bottom .flex_row-start div{
         margin: 1em 0 0 0;
     }
 }

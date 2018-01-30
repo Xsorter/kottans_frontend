@@ -1,5 +1,5 @@
 /* line 1, ../sass/footer.sass */
-.footer {
+footer {
   padding: 2em 1em;
   background: #24292e;
   width: 100%;
@@ -10,24 +10,24 @@
   font-size: 90%;
 }
 /* line 10, ../sass/footer.sass */
-.footer a {
+footer a {
   color: #ffffff;
   text-decoration: none;
 }
 /* line 13, ../sass/footer.sass */
-.footer a:hover {
+footer a:hover {
   text-decoration: underline;
   color: #d2d2d2;
 }
 @media screen and (max-width: 800px), (min-resolution: 270dpi) {
   /* line 17, ../sass/footer.sass */
-  .footer span:nth-child(2) {
+  footer span:nth-child(2) {
     margin-top: 1em;
   }
 }
 @media screen and (max-width: 800px), (min-resolution: 270dpi) {
   /* line 1, ../sass/footer.sass */
-  .footer {
+  footer {
     flex-direction: column;
   }
 }

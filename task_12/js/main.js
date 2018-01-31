@@ -8,7 +8,9 @@
         let s = d.getSeconds();
         let m = d.getMinutes();
         let h = d.getHours();
-        clockDOM.innerHTML = doubleDigit(h) + ":" + doubleDigit(m) + ":" + doubleDigit(s);
+        let fullTime = doubleDigit(h) + ":" + doubleDigit(m) + ":" + doubleDigit(s);
+        clockDOM.innerHTML = fullTime;
+        clockDOM.setAttribute('datetime', fullTime);
     }
 
     function doubleDigit(v){
@@ -21,3 +23,4 @@
     setInterval(time, 500);
 
 })()
+

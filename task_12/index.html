@@ -12,195 +12,196 @@
     <title>Pizza App</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header__time">
-            <span>
-                <i class="far fa-clock"></i>
-                <span id="time">00:00:00</span>
-            </span>
-        </div>
-        <div class="header__logo">
-            <a href="#">
-                <img src="img/pizza_logo.png" alt="pizza logo">
-            </a>
-        </div>
-        <div class="header__login">
-            <i class="fas fa-user"></i>
-            <a href="#">login/signup</a>
+    <header>
+        <div class="container">
+            <div class="time">
+                <span>
+                    <i class="far fa-clock"></i>
+                    <time datetime="" id="time">00:00:00</time>
+                </span>
+            </div>
+            <div class="logo">
+                <a href="#">
+                    <img src="img/pizza_logo.png" alt="pizza logo">
+                </a>
+            </div>
+            <div class="login">
+                <i class="fas fa-user"></i>
+                <a href="#">login/signup</a>
+            </div>
         </div>
     </header>
 
-    <main class="main">
-        <div class="flex flex_center m-b-2">
-            <button class="button button__stripe" type="button">
+    <main>
+        <div class="buttons">
+            <button class="button button--stripe" type="button">
                 <i class="fas fa-plus"></i>
                 Add new pizza
             </button>
         </div>
 
-        <div class="main__wrapper">
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+        <div class="wrapper">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/1.png" alt="pizza 1 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#1</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 3 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">3 min</time></span>
                         <span><b>$10.99</b></span>
                     </div>      
                 </div>
             </div>
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/2.png" alt="pizza 2 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#2</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 1 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">1 min</time></span>
                         <span><b>$14.99</b></span>
                     </div>      
                 </div>
             </div>
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">    
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">    
+                <div class="pizza__image">
                     <img src="img/3.png" alt="pizza 3 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#3</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 5 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">5 min</time></span>
                         <span><b>$10.99</b></span>
                     </div>      
                 </div>
             </div>
             
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/4.png" alt="pizza 4 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#4</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 10 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">10 min</time></span>
                         <span><b>$8.99</b></span>
                     </div>      
                 </div>
             </div>
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/5.png" alt="pizza 5 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#5</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 8 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">8 min</time></span>
                         <span><b>$10.99</b></span>
                     </div>      
                 </div>
             </div>
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/6.png" alt="pizza 6 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#6</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 7 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">7 min</time></span>
                         <span><b>$10.00</b></span>
                     </div>      
                 </div>
             </div>
             
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/7.png" alt="pizza 7 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#7</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 2 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">2 min</time></span>
                         <span><b>$12.99</b></span>
                     </div>      
                 </div>
             </div>
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/8.png" alt="pizza 8 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#8</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 4 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">4 min</time></span>
                         <span><b>$9.99</b></span>
                     </div>      
                 </div>
             </div>
-            <div class="main__wrapper-item">
-                <img class="image-absolute" src="img/rucola.png" alt="rucola image">
-                <div class="main__box-image">
+            <div class="pizza">
+                <img class="absolute" src="img/rucola.png" alt="rucola image">
+                <div class="pizza__image">
                     <img src="img/9.png" alt="pizza 9 image">
                 </div>
-                <div class="main__box-text">
+                <div class="pizza__text">
                     <div>
                         <span>XX:XX:XX</span>
                         <span>#9</span>
                     </div> 
                     <div>
-                        <span><b>ETA:</b> 5 min</span>
+                        <span><b>ETA:</b> <time datetime="01:00">2 min</time></span>
                         <span><b>$11.99</b></span>
                     </div>      
                 </div>
             </div>
         </div>
-        
-    
-        
-        
     </main>
 
-    <footer class="footer">
-        <span>
-            Kottans, Kottans str, <a href="tel:5777887">tel. 577-78-87</a> 
-        </span>
-        <span>
-            Pizza Manager &copy; 2018
-        </span>
+    <footer>
+        <div class="container">
+            <span>
+                Kottans, Kottans str, <a href="tel:5777887">tel. 577-78-87</a> 
+            </span>
+            <span>
+                Pizza Manager &copy; 2018
+            </span>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
 </html>
+

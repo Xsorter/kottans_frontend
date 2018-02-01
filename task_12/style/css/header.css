@@ -1,67 +1,73 @@
 /* line 1, ../sass/header.sass */
-.header {
+header {
   background: linear-gradient(to right, #e65c00, #f9d423);
   padding: 0.5em;
+}
+/* line 4, ../sass/header.sass */
+header .container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-/* line 7, ../sass/header.sass */
-.header__time {
+/* line 11, ../sass/header.sass */
+header .time {
   padding: 0.3em 0.5em;
   color: #fff;
   font-size: 18px;
 }
 @media screen and (max-width: 480px), (min-resolution: 270dpi) {
-  /* line 7, ../sass/header.sass */
-  .header__time {
+  /* line 11, ../sass/header.sass */
+  header .time {
     order: 2;
   }
 }
 @media screen and (max-width: 480px), (min-resolution: 270dpi) {
-  /* line 13, ../sass/header.sass */
-  .header__logo {
+  /* line 17, ../sass/header.sass */
+  header .logo {
     width: 100%;
     text-align: center;
     margin-bottom: 0.5em;
     order: 1;
   }
 }
-/* line 19, ../sass/header.sass */
-.header__logo img {
+/* line 23, ../sass/header.sass */
+header .logo img {
   max-width: 100px;
   filter: drop-shadow(5px 4px 3px rgba(0, 0, 0, 0.65));
 }
-/* line 22, ../sass/header.sass */
-.header__login {
+/* line 26, ../sass/header.sass */
+header .login {
   background: rgba(255, 255, 255, 0.85);
   padding: 0.3em 0.5em;
   border-radius: 3px;
   color: #555;
   transition: all ease-out 0.2s;
 }
-/* line 28, ../sass/header.sass */
-.header__login a {
+/* line 32, ../sass/header.sass */
+header .login a {
   text-decoration: none;
   color: #424242;
 }
-/* line 31, ../sass/header.sass */
-.header__login a:hover {
+/* line 35, ../sass/header.sass */
+header .login a:hover {
   text-decoration: underline;
 }
-/* line 34, ../sass/header.sass */
-.header__login:hover {
+/* line 37, ../sass/header.sass */
+header .login:hover {
   background: none;
 }
 @media screen and (max-width: 480px), (min-resolution: 270dpi) {
-  /* line 22, ../sass/header.sass */
-  .header__login {
+  /* line 26, ../sass/header.sass */
+  header .login {
     order: 3;
   }
 }
 @media screen and (max-width: 480px), (min-resolution: 270dpi) {
   /* line 1, ../sass/header.sass */
-  .header {
+  header {
     flex-wrap: wrap;
   }
 }

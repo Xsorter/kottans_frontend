@@ -19,22 +19,12 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 /* line 15, ../sass/buttons.sass */
-.button__dark-orange {
-  background: #ea5800;
-  color: #fff;
-}
-/* line 18, ../sass/buttons.sass */
-.button__dark-green {
-  background: #067500;
-  color: #fff;
-}
-/* line 21, ../sass/buttons.sass */
-.button__stripe {
+.button--stripe {
   overflow: hidden;
   color: #fff;
 }
-/* line 24, ../sass/buttons.sass */
-.button__stripe:before {
+/* line 18, ../sass/buttons.sass */
+.button--stripe::before {
   background: linear-gradient(to right, #067500 0%, #067500 50%, #034000 50%, #034000 100%);
   content: "";
   position: absolute;
@@ -45,8 +35,8 @@
   z-index: -2;
   transition: 0.3s ease-in-out;
 }
-/* line 34, ../sass/buttons.sass */
-.button__stripe:after {
+/* line 28, ../sass/buttons.sass */
+.button--stripe::after {
   content: "";
   width: 0;
   height: 0;
@@ -59,12 +49,12 @@
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
-/* line 46, ../sass/buttons.sass */
-.button__stripe:hover {
+/* line 40, ../sass/buttons.sass */
+.button--stripe:hover {
   color: #fff;
 }
-/* line 48, ../sass/buttons.sass */
-.button__stripe:hover:before {
+/* line 42, ../sass/buttons.sass */
+.button--stripe:hover::before {
   border-top-color: #1a70ff;
   border-right-color: #1a70ff;
   margin-left: -100%;
@@ -72,8 +62,8 @@
   width: 200%;
   height: 100%;
 }
-/* line 55, ../sass/buttons.sass */
-.button__stripe:hover:after {
+/* line 49, ../sass/buttons.sass */
+.button--stripe:hover::after {
   right: 100%;
   transition: 0.3s ease-in-out;
   width: 0;

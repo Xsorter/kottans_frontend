@@ -24,6 +24,7 @@ function find(city, key) {
   .then(function(body) {
     if (body) {
       console.log(body);
+      console.log(body.data)
     }
     return body;
   })

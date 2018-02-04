@@ -3,3 +3,4 @@ import { find } from "./modules/test3"
 
 
 find('киев', data.key);
+

@@ -1,0 +1,369 @@
+/* line 1, ../sass/helpers.sass */
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+/* line 5, ../sass/helpers.sass */
+.none {
+  display: none !important;
+}
+
+/* line 8, ../sass/helpers.sass */
+.block {
+  display: block;
+}
+
+/* line 11, ../sass/helpers.sass */
+.favorite-item,
+.history-item {
+  color: #077ab3;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 0.2em;
+  padding: 0.2em 0 0.2em 0;
+  transition: all ease-out 0.2s;
+}
+/* line 19, ../sass/helpers.sass */
+.favorite-item:hover,
+.history-item:hover {
+  transition: all ease-out 0.2s;
+  background: #d5e2f7;
+  font-weight: 700;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+/* line 28, ../sass/helpers.sass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 48, ../sass/helpers.sass */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 52, ../sass/helpers.sass */
+body {
+  line-height: 1;
+}
+
+/* line 55, ../sass/helpers.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 58, ../sass/helpers.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 61, ../sass/helpers.sass */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 66, ../sass/helpers.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, ../sass/loader.sass */
+.loader-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* line 5, ../sass/header.sass */
+.header-title {
+  text-align: center;
+  font-size: 250%;
+  margin: 0.5em;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.8);
+  font-family: "Fredoka One", cursive;
+}
+/* line 15, ../sass/header.sass */
+.header-search-wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+/* line 20, ../sass/header.sass */
+.header-search-wrapper input {
+  max-width: 700px;
+  border: none;
+  font-size: 135%;
+  width: 100%;
+  padding: 0.5em;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.45);
+}
+/* line 27, ../sass/header.sass */
+.header-search-wrapper button {
+  margin-left: 1em;
+  padding: 0 1em 0 1em;
+  font-size: 120%;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  background: #003a6d;
+  transition: all ease-out 0.2s;
+  cursor: pointer;
+}
+/* line 37, ../sass/header.sass */
+.header-search-wrapper button:hover {
+  opacity: 0.5;
+  transition: all ease-out 0.2s;
+}
+/* line 42, ../sass/header.sass */
+.header-filter-wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* line 49, ../sass/header.sass */
+.header-filter-wrapper select {
+  background: #fff;
+  color: #333;
+  border: 1px solid #f6f6f6;
+  margin: 0 0.5em 0 0.5em;
+}
+/* line 54, ../sass/header.sass */
+.header-filter-wrapper .filter-box {
+  margin-top: 0.5em;
+}
+
+/* line 1, ../sass/content.sass */
+body {
+  background: #83a4d4;
+  background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+  background: linear-gradient(to right, #b6fbff, #83a4d4);
+}
+@media only screen and (max-width: 600px) {
+  /* line 1, ../sass/content.sass */
+  body {
+    padding: 0.5em;
+  }
+}
+
+/* line 8, ../sass/content.sass */
+.wrapper-outer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  justify-content: space-between;
+}
+
+/* line 16, ../sass/content.sass */
+.main-title {
+  text-transform: uppercase;
+  margin-top: 1em;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 23, ../sass/content.sass */
+.main-title img {
+  display: block;
+  width: 35px;
+  margin: -4px 0 0 5px;
+  transition: all ease-out 0.4s;
+  cursor: pointer;
+}
+/* line 30, ../sass/content.sass */
+.main-title img:hover {
+  transition: all ease-out 0.4s;
+  transform: rotate(270deg) scale(1.07);
+}
+/* line 36, ../sass/content.sass */
+.main-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1260px;
+  background: #ffffff12;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.15);
+  padding: 1em;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+@media only screen and (max-width: 600px) {
+  /* line 36, ../sass/content.sass */
+  .main-content-wrapper {
+    padding: 0.5em;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* line 51, ../sass/content.sass */
+.main-content-box {
+  background: #fff;
+  padding: 1em;
+  max-width: 325px;
+  max-height: 200px;
+  width: 100%;
+  margin: 0 0 0.5em 0.5em;
+  transition: all ease-out 0.1s;
+}
+@media only screen and (max-width: 600px) {
+  /* line 51, ../sass/content.sass */
+  .main-content-box {
+    margin: 0 0 0.5em 0em;
+  }
+}
+/* line 61, ../sass/content.sass */
+.main-content-box:hover {
+  transition: all ease-out 0.1s;
+  transform: scale(1.03);
+}
+/* line 65, ../sass/content.sass */
+.main-content-box .date {
+  font-weight: 700;
+  font-size: 140%;
+  color: #01629c;
+  margin-bottom: 1em;
+}
+/* line 71, ../sass/content.sass */
+.main-content-box p {
+  margin-top: 0.3em;
+  color: #333;
+  font-size: 95%;
+}
+/* line 76, ../sass/content.sass */
+.main-content-box_values {
+  float: right;
+  padding: 0.2em;
+  text-align: center;
+  max-width: 125px;
+}
+/* line 81, ../sass/content.sass */
+.main-content-box_values .title-caption {
+  font-size: 80%;
+  color: #555;
+}
+/* line 84, ../sass/content.sass */
+.main-content-box_values .number-caption {
+  font-size: 200%;
+  font-weight: 700;
+}
+/* line 87, ../sass/content.sass */
+.main-content-box_values object {
+  margin-top: 1.5em;
+}
+/* line 91, ../sass/content.sass */
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+}
+/* line 98, ../sass/content.sass */
+.main-sidebar {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* line 103, ../sass/content.sass */
+.main-sidebar-button {
+  border: none;
+  background: #003a6d;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.7em;
+  margin-top: 0.5em;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+}
+/* line 114, ../sass/content.sass */
+.main-sidebar-button:hover {
+  opacity: 0.5;
+  transition: all ease-out 0.2s;
+}
+/* line 117, ../sass/content.sass */
+.main-sidebar h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+/* line 121, ../sass/content.sass */
+.main-sidebar section {
+  max-width: 200px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  padding: 0.5em;
+  text-align: center;
+}
+/* line 128, ../sass/content.sass */
+.main-sidebar section:last-child {
+  margin-top: 1em;
+}
+
+/* line 1, ../sass/footer.sass */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #020c1f;
+  background: -webkit-linear-gradient(to right, #020917, #003656, #001f56);
+  background: linear-gradient(to right, #020917, #003656, #001f56);
+  width: 100%;
+  min-height: 100px;
+  margin-top: 1em;
+}
+/* line 12, ../sass/footer.sass */
+.footer p {
+  max-width: 1260px;
+  text-align: center;
+  font-size: 85%;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
+/* line 19, ../sass/footer.sass */
+.footer p span {
+  color: #999;
+}

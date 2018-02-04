@@ -1,0 +1,26 @@
+/* line 1, ../sass/footer.sass */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #020c1f;
+  background: -webkit-linear-gradient(to right, #020917, #003656, #001f56);
+  background: linear-gradient(to right, #020917, #003656, #001f56);
+  width: 100%;
+  min-height: 100px;
+  margin-top: 1em;
+}
+/* line 12, ../sass/footer.sass */
+.footer p {
+  max-width: 1260px;
+  text-align: center;
+  font-size: 85%;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
+/* line 19, ../sass/footer.sass */
+.footer p span {
+  color: #999;
+}

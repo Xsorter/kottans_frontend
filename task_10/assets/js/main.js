@@ -63,29 +63,39 @@
             showHistory(dataDOM.favoritesDOM, data.favoriteObj, 'favorite-item');
         }
 
-        dataDOM.buttonHistoryClear.addEventListener('click', ()=>{
-            clearLocalStorage(dataDOM.historyDOM, 'history')
-        });
+        document.onclick = (event) => {
+            let target = event.target;
 
-        dataDOM.buttonFavoritesClear.addEventListener('click', ()=>{
-            clearLocalStorage(dataDOM.favoritesDOM, 'favorites')
-        });
-
-        dataDOM.unitsDOM.addEventListener('change', ()=>{
-            data.units = dataDOM.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
-            data.unitsDisplay = data.units === 'M' ? 'C' : 'F'; 
-            if(data.city){
-                findCity(data.city);
+            if(target && target === dataDOM.buttonHistoryClear){
+                clearLocalStorage(dataDOM.historyDOM, 'history')
             }
-        });
 
-        dataDOM.periodDOM.addEventListener('change', ()=>{
-            data.period = +dataDOM.periodDOM.options[document.querySelector('#period').selectedIndex].value;
-            if(data.city){
-                findCity(data.city);
+            if(target && target === dataDOM.buttonFavoritesClear){
+                clearLocalStorage(dataDOM.favoritesDOM, 'favorites')
             }
-        });
+        }
 
+        document.onchange = (event) => {
+            let target = event.target;
+
+            if(target && target === dataDOM.unitsDOM){
+                data.units = dataDOM.unitsDOM.options[document.querySelector('#units').selectedIndex].value;
+                data.unitsDisplay = data.units === 'M' ? 'C' : 'F'; 
+                if(data.city){
+                    findCity(data.city);
+                }
+            }
+
+            if(target && target === dataDOM.periodDOM){
+                data.period = +dataDOM.periodDOM.options[document.querySelector('#period').selectedIndex].value;
+                if(data.city){
+                    findCity(data.city);
+                }
+            }
+            
+        }
+
+        
         dataDOM.formDOM.addEventListener('submit', (e)=>{
             e.preventDefault();
             data.city = dataDOM.inputDOM.value;

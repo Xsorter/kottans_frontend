@@ -1,25 +1,37 @@
 (function () {
 'use strict';
 
-function test(){
-    console.log('module 1');
+let data = {
+    key: 'c6976a4c4e05421f9b4eaee7a311f0dc'
+};
+
+function find(city, key) {
+  fetch(
+    `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&units=C&key=${key}`
+  )
+  .then(function(response) {
+    if (response.status === 204) {
+        console.log(`City not found. Please, try again.`);
+    } else if (response.status === 429) {
+        console.log(`API Limit reached (75 queries per 1 hour)`);
+    } else if (response.status === 400) {
+        console.log(`Search field is empty. Please, enter city name`);
+      return false;
+    } else {
+      return response.json();
+    }
+  })
+  .then(function(body) {
+    if (body) {
+      console.log(body);
+    }
+    return body;
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
 }
 
-let data = 'some data';
-
-function test2(){
-    console.log('module 2');
-}
-
-function test3(){
-    console.log('module3');
-}
-
-test();
-test2();
-test3();
-
-
-console.log(data);
+find('киев', data.key);
 
 }());

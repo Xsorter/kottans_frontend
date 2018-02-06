@@ -11,6 +11,7 @@ import './assets/media/icons/a05d.svg';
 import './assets/media/icons/c01d.svg';
 import './assets/media/icons/c02d.svg';
 import './assets/media/icons/c03d.svg';
+import './assets/media/icons/c04d.svg';
 
 import './assets/media/icons/d01d.svg';
 import './assets/media/icons/d02d.svg';

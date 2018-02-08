@@ -2,7 +2,7 @@ import {parsedUrl, dataDOM, data} from "./config";
 import {pushHistory, showHistory} from "./localStorage";
 
 /*TODO move somewhere else i guess*/ 
-function createFavoriteButton(body) {
+function addFavoriteButton(body) {
     dataDOM.titleDOM.insertAdjacentHTML(
       "beforeend",
       `Current city: ${body.city_name} 
@@ -25,7 +25,7 @@ function createFavoriteButton(body) {
 //todo - refactor don't do DOM operations in loop!
 function renderCity(body) {
   dataDOM.loaderDOM.classList.add("none");
-  createFavoriteButton(body);
+  addFavoriteButton(body);
 
   for (let i = 0; i < data.period; i++) {
     dataDOM.mainDOM.insertAdjacentHTML(

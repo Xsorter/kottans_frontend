@@ -9,7 +9,7 @@ function clearLocalStorage(DOM, key) {
 
 //localstorage methods for history and favorites
 //TODO refactor
-function pushHistory(DOM, obj, cssClass, localStorageKey) {
+function pushHistory(DOM, storageObject, cssClass, localStorageKey) {
     if (
       localStorage.getItem("favorites") &&
       localStorageKey === "favorites" &&
@@ -17,16 +17,16 @@ function pushHistory(DOM, obj, cssClass, localStorageKey) {
         -1
     ) {
     } else {
-      obj.city.push(data.city);
-      localStorage.setItem(localStorageKey, JSON.stringify(obj));
-      showHistory(DOM, obj, cssClass);
+      storageObject.city.push(data.city);
+      localStorage.setItem(localStorageKey, JSON.stringify(storageObject));
+      showHistory(DOM, storageObject, cssClass);
     }
   }
 
-  function showHistory(DOM, obj, cssClass) {
+  function showHistory(DOM, storageObject, cssClass) {
     DOM.innerHTML = "";
-    if (obj) {
-      obj.city.map(i => {
+    if (storageObject) {
+      storageObject.city.map(i => {
         DOM.insertAdjacentHTML(
           "beforeend",
           `<li class="${cssClass}">${i}</li>`

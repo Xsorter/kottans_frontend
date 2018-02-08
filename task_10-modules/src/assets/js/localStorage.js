@@ -1,6 +1,7 @@
 import {parsedUrl, dataDOM, data} from "./config";
+import {findCity} from "./search";
 
-/*create buttons to clear localstorage data*/
+/*clear localstorage data*/
 function clearLocalStorage(DOM, key) {
   localStorage.removeItem(key);
   DOM.innerHTML = "";
@@ -26,24 +27,21 @@ function pushHistory(DOM, storageObject, cssClass, localStorageKey) {
   function showHistory(DOM, storageObject, cssClass) {
     DOM.innerHTML = "";
     if (storageObject) {
+
       storageObject.city.map(i => {
-        DOM.insertAdjacentHTML(
-          "beforeend",
-          `<li class="${cssClass}">${i}</li>`
-        );
+        DOM.insertAdjacentHTML("beforeend",`<li class="${cssClass}">${i}</li>`);
       });
-      for (
-        let i = 0;
-        i < document.querySelectorAll(`.${cssClass}`).length;
-        i++
-      ) {
-        document
-          .querySelectorAll(`.${cssClass}`)
-          [i].addEventListener("click", function() {
-            data.city = this.innerHTML;
-            findCity(this.innerHTML);
-          });
-      }
+      
+      let hystoryItem = document.querySelector('.main-sidebar');
+
+      hystoryItem.onclick = event => {
+        let target = event.target;
+        if (target && target.tagName === 'LI'){
+          data.city = target.innerHTML;
+          findCity(target.innerHTML);
+        } 
+      };
+
     }
   }
 

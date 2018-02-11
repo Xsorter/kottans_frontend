@@ -32,18 +32,16 @@ function renderCity(body) {
       "beforeend",
 
       //template with weather data
-      `<div class="main-content-box main-content-box_count-${i}">
-                <div class="main-content-box_values">
-                    <p>
-                        <span class="number-caption">${
-                          body.data[i].temp
-                        }</span> ${data.unitsDisplay}
-                        <p class="title-caption">avg. temp.</p> 
-                    </p>
+      `<div class="content">
+          <div class="content__values">
+            <p>
+              <span class="caption__number">${body.data[i].temp}</span> ${data.unitsDisplay}
+              <p class="caption__title">avg. temp.</p> 
+            </p>
                     <object data="assets/media/${
                       body.data[i].weather.icon
                     }.svg" type=""></object>
-                    <p class="title-caption">${
+                    <p class="caption__title">${
                       body.data[i].weather.description
                     }</p> 
                 </div>

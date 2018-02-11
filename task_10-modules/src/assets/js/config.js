@@ -3,17 +3,17 @@ let parsedUrl = new URL(window.location.href);
 
 //object with DOM elements
 const dataDOM = {
-  formDOM: document.querySelector("#searchForm"),
+  formDOM: document.querySelector("#search-form"),
   inputDOM: document.querySelector("#search"),
-  mainDOM: document.querySelector(".main-wrapper"),
-  titleDOM: document.querySelector(".main-title"),
+  mainDOM: document.querySelector(".wrapper"),
+  titleDOM: document.querySelector(".description"),
   unitsDOM: document.querySelector("#units"),
   periodDOM: document.querySelector("#period"),
-  historyDOM: document.querySelector(".main-history"),
-  favoritesDOM: document.querySelector(".main-favorites"),
-  buttonHistoryClear: document.querySelector("#historyClear"),
-  buttonFavoritesClear: document.querySelector("#favoritesClear"),
-  loaderDOM: document.querySelector(".loader-wrapper")
+  historyDOM: document.querySelector(".history"),
+  favoritesDOM: document.querySelector(".favorites"),
+  buttonHistoryClear: document.querySelector("#history-clear"),
+  buttonFavoritesClear: document.querySelector("#favorites-clear"),
+  loaderDOM: document.querySelector(".loader")
 };
 
 let data = {

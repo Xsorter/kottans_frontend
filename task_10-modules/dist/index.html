@@ -11,35 +11,31 @@
 <link href="./assets/css/app.css" rel="stylesheet"></head>
 
 <body>
-
-    <div class="wrapper-outer">
-        <div class="loader-wrapper none">
+    <div class="outer">
+        <div class="loader none">
             <object data="assets/media/loader.svg" type=""></object>
         </div>
 
+        <header>
+            <h1 class="title">Weather-app</h1>
 
-        <header class="header-wrapper">
-
-            <h1 class="header-title">Weather-app</h1>
-
-            <form id="searchForm" action="">
-                <div class="header-search-wrapper">
+            <form id="search-form" action="">
+                <div class="search">
                     <input id="search" value="" placeholder="enter city name" name="city" type="text">
                     <button>
                         Search
                     </button>
                 </div>
 
-                <div class="header-filter-wrapper">
-                    <div class="filter-box">
+                <div class="filter">
+                    <div class="filter__box">
                         <label for="units">temperature units:</label>
                         <select name="units" id="units">
                             <option value="M">Celcius</option>
                             <option value="I">Fahrenheit</option>
                         </select>
                     </div>
-
-                    <div class="filter-box">
+                    <div class="filter__box">
                         <label for="period">forecast period:</label>
                         <select name="period" id="period">
                             <option value="1">Today</option>
@@ -52,39 +48,35 @@
                 </div>
             </form>
 
-            <h2 class="main-title"></h2>
-
+            <h2 class="description"></h2>
             <span class="message-handler"></span>
         </header>
 
-        <main class="main-content-wrapper">
-
-            <div class="main-wrapper"></div>
-
-            <div class="main-sidebar">
-                <section class="main-history-wrapper">
+        <main>
+            <div class="wrapper"></div>
+            <div class="sidebar">
+                <section>
                     <h3>Search history</h3>
-                    <ul class="main-history">
+                    <ul class="history">
                         <li>there are no history yet</li>
                     </ul>
-                    <button class="main-sidebar-button" id="historyClear">clear history</button>
+                    <button id="history-clear">clear history</button>
                 </section>
-
-                <section class="main-favorites-wrapper">
+                <section>
                     <h3>Favorites</h3>
-                    <ul class="main-favorites">
+                    <ul class="favorites">
                         <li>there are no favorites yet</li>
                     </ul>
-                    <button class="main-sidebar-button" id="favoritesClear">clear favorites</button>
+                    <button id="favorites-clear">clear favorites</button>
                 </section>
             </div>
         </main>
 
-        <footer class="footer">
+        <footer>
             <p>
                 2017
                 <span>&bull;</span> icons taken from flaticon.com, animated svg taken from amcharts.com (IPL), weather data brign
-                by weatherbit.io API
+                <span>by weatherbit.io API</span>
                 <span>&bull;</span> made by Alex Nelin
             </p>
         </footer>

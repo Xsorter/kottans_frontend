@@ -5,102 +5,42 @@ body
     @media only screen and (max-width: 600px)
         padding: 0.5em
 
-.wrapper-outer 
+.outer 
     min-height: 100vh
     display: flex
     flex-direction: column
     align-self: flex-end
     justify-content: space-between
 
-.main
-    &-title 
-        text-transform: uppercase
-        margin-top: 1em
-        letter-spacing: 1px
-        display: flex 
+main
+    display: flex
+    justify-content: space-between
+    width: 100% 
+    max-width: 1260px 
+    background: #ffffff12
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.15)
+    padding: 1em
+    margin: 0 auto
+    margin-top: 1em
+    @media only screen and (max-width: 600px)
+        padding: 0.5em
+        flex-wrap: wrap
         justify-content: center
-        align-items: center
-        img 
-            display: block
-            width: 35px
-            margin: -4px 0 0 5px
-            transition: all ease-out 0.4s
-            cursor: pointer
-            
-            &:hover
-                transition: all ease-out 0.4s
-                transform: rotate(270deg) scale(1.07)
-                
-
-    &-content
-        &-wrapper
-            display: flex
-            justify-content: space-between
-            width: 100% 
-            max-width: 1260px 
-            background: #ffffff12
-            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.15)
-            padding: 1em
-            margin: 0 auto
-            margin-top: 1em
-            @media only screen and (max-width: 600px)
-                padding: 0.5em
-                flex-wrap: wrap
-                justify-content: center
-
-        &-box 
-            background: #fff
-            padding: 1em 
-            max-width: 325px 
-            max-height: 200px
-            width: 100% 
-            margin: 0 0 0.5em 0.5em
-            transition: all ease-out 0.1s
-            @media only screen and (max-width: 600px)
-                margin: 0 0 0.5em 0em
-            &:hover
-                transition: all ease-out 0.1s
-                transform: scale(1.03)    
-
-            .date
-                font-weight: 700
-                font-size: 140%
-                color: #01629c
-                margin-bottom: 1em    
-
-            p 
-                margin-top: 0.3em
-                color: #333
-                font-size: 95%
-
-            &_values
-                float: right
-                padding: 0.2em
-                text-align: center
-                max-width: 125px
-                .title-caption 
-                    font-size: 80%
-                    color: #555
-                .number-caption 
-                    font-size: 200%
-                    font-weight: 700
-                object 
-                    margin-top: 1.5em        
-                
-
-    &-wrapper 
+    .wrapper 
         display: flex 
         flex-wrap: wrap
         justify-content: flex-start
         max-width: 1000px
         width: 100%           
-
-    &-sidebar 
+    .sidebar 
         min-width: 200px
         display: flex
         flex-direction: column  
         justify-content: flex-start
-        &-button 
+        @media only screen and (max-width: 600px)
+            width: 100%
+            margin-top: 2em
+        button 
             border: none 
             background: #003a6d
             text-transform: uppercase
@@ -126,4 +66,47 @@ body
             padding: 0.5em
             text-align: center
             &:last-child 
-                margin-top: 1em           
+                margin-top: 1em
+                @media only screen and (max-width: 600px)
+                    margin-top: 0.5em
+            @media only screen and (max-width: 600px)
+                max-width: none 
+                width: 100%        
+                
+
+.content 
+    background: #fff
+    padding: 1em 
+    max-width: 325px 
+    max-height: 200px
+    width: 100% 
+    margin: 0 0 0.5em 0.5em
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    transition: all 0.2s cubic-bezier(.25,.8,.25,1)
+    border-radius: 5px
+    @media only screen and (max-width: 600px)
+        margin: 0 0 0.5em 0em
+    &:hover
+        box-shadow: 0 7px 18px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.22)
+    .date
+        font-weight: 700
+        font-size: 140%
+        color: #01629c
+        margin-bottom: 1em    
+    p 
+        margin-top: 0.3em
+        color: #333
+        font-size: 95%
+    &__values
+        float: right
+        padding: 0.2em
+        text-align: center
+        max-width: 125px
+        .caption__title 
+            font-size: 80%
+            color: #555
+        .caption__number 
+            font-size: 200%
+            font-weight: 700
+        object 
+            margin-top: 1.5em                           

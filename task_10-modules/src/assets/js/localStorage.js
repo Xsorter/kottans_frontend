@@ -32,7 +32,7 @@ function pushHistory(DOM, storageObject, cssClass, localStorageKey) {
         DOM.insertAdjacentHTML("beforeend",`<li class="${cssClass}">${i}</li>`);
       });
       
-      let hystoryItem = document.querySelector('.main-sidebar');
+      let hystoryItem = document.querySelector('.sidebar');
 
       hystoryItem.onclick = event => {
         let target = event.target;

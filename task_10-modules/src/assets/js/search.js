@@ -13,7 +13,9 @@ function pushUrl(city) {
 
 function getUrl(){
   window.onpopstate = function(event) {
-    findCity(event.state);
+    if(event.state !== null){
+      findCity(event.state);
+    }
   };
 }
 

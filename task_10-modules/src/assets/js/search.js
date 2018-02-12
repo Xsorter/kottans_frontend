@@ -6,8 +6,15 @@ import { pushHistory, showHistory, clearLocalStorage } from "./localStorage";
 //push current city to URL
 function pushUrl(city) {
   let url = `index.html?city=${city}`;
-  history.pushState(null, null, url);
+  history.pushState(city, null, url);
   let parsedUrl = new URL(window.location.href);
+  getUrl();
+}
+
+function getUrl(){
+  window.onpopstate = function(event) {
+    findCity(event.state);
+  };
 }
 
 function setError(error){

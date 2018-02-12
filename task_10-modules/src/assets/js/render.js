@@ -1,7 +1,7 @@
 import {parsedUrl, dataDOM, data} from "./config";
 import {pushHistory, showHistory} from "./localStorage";
 
-/*TODO move somewhere else i guess*/ 
+
 function addFavoriteButton(body) {
     dataDOM.titleDOM.insertAdjacentHTML(
       "beforeend",
@@ -20,9 +20,7 @@ function addFavoriteButton(body) {
     });
   }
 
-
 //render method
-//todo - refactor don't do DOM operations in loop!
 function renderCity(body) {
   dataDOM.loaderDOM.classList.add("none");
   addFavoriteButton(body);
@@ -38,29 +36,23 @@ function renderCity(body) {
               <span class="caption__number">${body.data[i].temp}</span> ${data.unitsDisplay}
               <p class="caption__title">avg. temp.</p> 
             </p>
-                    <object data="assets/media/${
-                      body.data[i].weather.icon
-                    }.svg" type=""></object>
-                    <p class="caption__title">${
-                      body.data[i].weather.description
-                    }</p> 
-                </div>
-                <p class="date">${body.data[i].datetime
-                  .split("-")
-                  .reverse()
-                  .join(".")}</p> 
-                <p>max. temp.: ${body.data[i].max_temp} ${data.unitsDisplay}</p>
-                <p>min. temp.: ${body.data[i].min_temp} ${data.unitsDisplay}</p>
-                <p>feels like, max: ${body.data[i].app_max_temp} ${
-        data.unitsDisplay
-      }</p>
-                <p>feels like, min: ${body.data[i].app_min_temp} ${
-        data.unitsDisplay
-      }</p>
-                <p>wind: ${body.data[i].wind_spd} m/s</p>
-                <p>precipitation: ${body.data[i].pop} %</p>
-            </div>
-            `
+            <object data="assets/media/${body.data[i].weather.icon}.svg" type="">
+            </object>
+            <p class="caption__title">${body.data[i].weather.description}</p> 
+          </div>
+          <p class="date">${body.data[i].datetime
+            .split("-")
+            .reverse()
+            .join(".")}
+          </p> 
+          <p>max. temp.: ${body.data[i].max_temp} ${data.unitsDisplay}</p>
+          <p>min. temp.: ${body.data[i].min_temp} ${data.unitsDisplay}</p>
+          <p>feels like, max: ${body.data[i].app_max_temp} ${data.unitsDisplay}</p>
+          <p>feels like, min: ${body.data[i].app_min_temp} ${data.unitsDisplay}</p>
+          <p>wind: ${body.data[i].wind_spd} m/s</p>
+          <p>precipitation: ${body.data[i].pop} %</p>
+      </div>
+      `
     );
   }
 }

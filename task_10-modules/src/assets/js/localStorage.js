@@ -8,8 +8,6 @@ function clearLocalStorage(DOM, key) {
   DOM.insertAdjacentHTML("beforeend", `there are no ${key} yet`);
 }
 
-//localstorage methods for history and favorites
-//TODO refactor
 function pushHistory(DOM, storageObject, cssClass, localStorageKey) {
     if (
       localStorage.getItem("favorites") &&

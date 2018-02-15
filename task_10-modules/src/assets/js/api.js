@@ -13,3 +13,4 @@ const getWeather = url => fetch(`${BASE_URL}${url}`)
   })
   
 export {getWeather};
+

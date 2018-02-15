@@ -63,7 +63,7 @@ import "./assets/media/icons/u00d.svg";
   });
 
   function init() {
-    //run fetch method, we have city in URL
+    //run fetch method, when there is city in URL
     if (parsedUrl.searchParams.get("city")) {
       findCity(data.city);
     }
@@ -77,7 +77,7 @@ import "./assets/media/icons/u00d.svg";
       data.favoriteObj = JSON.parse(localStorage.getItem("favorites"));
       showHistory(dataDOM.favoritesDOM, data.favoriteObj, "favorite-item");
     }
-
+ 
     document.onclick = event => {
       let target = event.target;
 
@@ -130,8 +130,7 @@ import "./assets/media/icons/u00d.svg";
     });
   }
 
-  //push current city to URL
-  
-
 })();
+
+
 

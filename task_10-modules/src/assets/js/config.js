@@ -35,3 +35,5 @@ let data = {
 };
 
 export { parsedUrl, dataDOM, data };
+
+

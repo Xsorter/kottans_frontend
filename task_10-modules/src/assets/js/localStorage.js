@@ -44,3 +44,5 @@ function pushHistory(DOM, storageObject, cssClass, localStorageKey) {
   }
 
   export {pushHistory, showHistory, clearLocalStorage}
+
+  

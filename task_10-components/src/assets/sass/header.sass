@@ -1,0 +1,72 @@
+header
+    .title 
+        text-align: center
+        font-size: 250%
+        margin: 0.5em
+        color: #fff
+        letter-spacing: 1px
+        text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.80)
+        font-family: 'Fredoka One', cursive
+    .description
+        text-transform: uppercase
+        margin-top: 1em
+        letter-spacing: 1px
+        display: flex 
+        justify-content: center
+        align-items: center
+        img 
+            display: block
+            width: 35px
+            margin: -4px 0 0 5px
+            transition: all ease-out 0.4s
+            cursor: pointer
+            &:hover
+                transform: rotate(270deg)
+    .search
+        max-width: 1260px
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        input
+            max-width: 700px
+            border: none
+            font-size: 190%
+            width: 100%
+            padding: 0.2em
+            box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.45)
+        button    
+            margin-left: 1em
+            padding: 0 1em 0 1em
+            font-size: 120%
+            text-transform: uppercase
+            color: #fff 
+            border: none
+            background: #003a6d
+            transition: all ease-out 0.2s
+            cursor: pointer
+            &:hover 
+                opacity: 0.5
+                transition: all ease-out 0.2s
+            @media only screen and (max-width: 600px)
+                margin-left: 0.5em    
+    .filter 
+        max-width: 1260px
+        margin: 0 auto
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        select 
+            background: rgba(255,255,255,0.5) 
+            border-radius: 3px
+            color: #333 
+            border: 1px solid #f6f6f6
+            padding: 0.5em
+            border: none
+            margin: 0 0.5em 0 0.5em
+        label 
+            color: #555    
+        &__box 
+            margin-top: 0.5em    
+
+            

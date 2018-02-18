@@ -4,7 +4,7 @@ class LocationSearch {
             isValid : true
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.host = document.createElement('div');
+        this.host = document.createElement('header');
         this.host.classList.add('location-wrapper');
         this.host.addEventListener('submit', this.handleSubmit);
     }
@@ -25,9 +25,12 @@ class LocationSearch {
     render() {
         const {isValid} = this.state;
         this.host.innerHTML = `
+            <h1 class="title">Weather-app</h1>
             <form class=${isValid ? '"weather-form"' : '"weather-form --invalid"'}>
-                <input name="search" required class="search-weather">
-                <button class="weather-search-submit">Search</button>
+                <div class="search">
+                    <input name="search" required class="search-weather">
+                    <button class="weather-search-submit">Search</button>.
+                </div>
             </form>
         `;
 

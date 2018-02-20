@@ -1,10 +1,10 @@
 import { parsedUrl, dataDOM, data } from "./config";
-import { getWeather } from "./api";
+import { getWeather } from "../../components/Api";
 import { renderCity } from "./render";
-import { pushHistory, showHistory, clearLocalStorage } from "./localStorage";
+/*import { pushHistory, showHistory, clearLocalStorage } from "./localStorage";*/
 
 //push current city to URL
-function pushUrl(city) {
+/* function pushUrl(city) {
   let url = `index.html?city=${city}`;
   history.pushState(city, null, url);
   let parsedUrl = new URL(window.location.href);
@@ -17,7 +17,7 @@ function getUrl(){
       findCity(event.state);
     }
   };
-}
+} */
 
 function setError(error){
   dataDOM.loaderDOM.classList.add("none");
@@ -37,10 +37,10 @@ function setError(error){
 }
 
 function findCity(city) {
-  dataDOM.mainDOM.innerHTML = "";
+  /* dataDOM.mainDOM.innerHTML = "";
   dataDOM.titleDOM.innerHTML = "";
   dataDOM.loaderDOM.classList.remove("none"); //show loader
-  pushUrl(city);
+  pushUrl(city); */
 
   getWeather(`/daily?city=${city}&units=${data.units}&key=${data.secretKey}`)
     .then(function(body) {

@@ -1,5 +1,4 @@
 import LocationSearch from "./LocationSearch";
-import { create } from "domain";
 
 class App{
   constructor(){

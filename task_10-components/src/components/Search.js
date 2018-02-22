@@ -1,6 +1,6 @@
-import { parsedUrl, dataDOM, data } from "./config";
-import { getWeather } from "../../components/Api";
-import { renderCity } from "./render";
+import { parsedUrl, dataDOM, data } from "../assets/js/config";
+import { getWeather } from "./Api";
+import { renderCity } from "../assets/js/render";
 /*import { pushHistory, showHistory, clearLocalStorage } from "./localStorage";*/
 
 //push current city to URL
@@ -34,6 +34,7 @@ function setError(error){
   } else {
     dataDOM.titleDOM.insertAdjacentHTML("beforeend", `${error.statusText}`);
   } */
+  console.log(error.status)
 }
 
 function findCity(city) {

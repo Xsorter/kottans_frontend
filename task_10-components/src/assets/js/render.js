@@ -1,7 +1,7 @@
 import {parsedUrl, dataDOM, data} from "./config";
 import {pushHistory, showHistory} from "./localStorage";
 
-function addFavoriteButton(body) {
+/* function addFavoriteButton(body) {
     dataDOM.titleDOM.insertAdjacentHTML(
       "beforeend",
       `Current city: ${body.city_name} 
@@ -17,15 +17,16 @@ function addFavoriteButton(body) {
         "favorites"
       );
     });
-  }
+  } */
 
 //render method
 function renderCity(body) {
-  dataDOM.loaderDOM.classList.add("none");
-  addFavoriteButton(body);
+  /* dataDOM.loaderDOM.classList.add("none"); */
+  /* addFavoriteButton(body); */
 
   //create container for inserting data from loop
   let documentFragment = document.createDocumentFragment();
+  let mainWrapper = document.querySelector('.location-wrapper');
 
   for (let i=0; i<data.period; i++) {
     let contentWrapper = document.createElement("div");
@@ -57,7 +58,7 @@ function renderCity(body) {
     documentFragment.appendChild(contentWrapper);
   }
 
-  dataDOM.mainDOM.appendChild(documentFragment);
+  mainWrapper.appendChild(documentFragment);
 
 }
 

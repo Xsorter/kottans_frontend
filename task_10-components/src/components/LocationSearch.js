@@ -1,3 +1,5 @@
+import { findCity } from "./Search";
+
 class LocationSearch {
     constructor() {
         this.state = {
@@ -9,6 +11,8 @@ class LocationSearch {
         this.host.addEventListener('submit', this.handleSubmit);
     }
 
+    
+
     updateState(nextState) {
         this.state = Object.assign({}, this.state, nextState);
         this.render();
@@ -17,6 +21,8 @@ class LocationSearch {
     handleSubmit(e){
         e.preventDefault();
         const city = e.target.elements.search.value.trim();
+        findCity(city);
+
         if(!city.length){
             this.updateState({isValid: false})
         }

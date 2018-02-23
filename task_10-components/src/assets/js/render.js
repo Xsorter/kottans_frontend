@@ -81,9 +81,10 @@ function renderCity(body) {
 
   //create container for inserting data from loop
   
-  let wrapperElement = document.getElementById('main');
-  console.log(wrapperElement);
-
+  let mainElement = document.getElementById('main');
+  let wrapperElement = document.createElement('div');
+  wrapperElement.classList.add('wrapper');
+  
   let documentFragment = document.createDocumentFragment();
   let mainWrapper = document.querySelector('.location-wrapper');
 
@@ -120,6 +121,8 @@ function renderCity(body) {
   
   
   wrapperElement.appendChild(documentFragment);
+  mainElement.appendChild(wrapperElement);
+  
 
 
   

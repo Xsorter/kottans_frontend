@@ -1,6 +1,61 @@
 import {parsedUrl, dataDOM, data} from "./config";
 import {pushHistory, showHistory} from "./localStorage";
 
+import "../media/icons/a01d.svg";
+import "../media/icons/a02d.svg";
+import "../media/icons/a03d.svg";
+import "../media/icons/a04d.svg";
+import "../media/icons/a05d.svg";
+
+import "../media/icons/c01d.svg";
+import "../media/icons/c02d.svg";
+import "../media/icons/c03d.svg";
+import "../media/icons/c04d.svg";
+
+import "../media/icons/d01d.svg";
+import "../media/icons/d02d.svg";
+import "../media/icons/d03d.svg";
+
+import "../media/icons/f01d.svg";
+
+import "../media/icons/r01d.svg";
+import "../media/icons/r02d.svg";
+import "../media/icons/r03d.svg";
+import "../media/icons/r04d.svg";
+import "../media/icons/r05d.svg";
+import "../media/icons/r06d.svg";
+
+import "../media/icons/s01d.svg";
+import "../media/icons/s02d.svg";
+import "../media/icons/s03d.svg";
+import "../media/icons/s04d.svg";
+import "../media/icons/s05d.svg";
+import "../media/icons/s06d.svg";
+
+import "../media/icons/t01d.svg";
+import "../media/icons/t02d.svg";
+import "../media/icons/t03d.svg";
+import "../media/icons/t04d.svg";
+import "../media/icons/t05d.svg";
+import "../media/icons/t06d.svg";
+import "../media/icons/t07d.svg";
+
+import "../media/icons/u00d.svg";
+
+class Render{
+  constructor(){
+    this.host = document.createElement('main');
+    this.host.id = "main";
+
+  }
+
+  render() {
+    this.host.innerHTML = ``
+    return this.host
+  }
+
+}
+
 /* function addFavoriteButton(body) {
     dataDOM.titleDOM.insertAdjacentHTML(
       "beforeend",
@@ -25,6 +80,10 @@ function renderCity(body) {
   /* addFavoriteButton(body); */
 
   //create container for inserting data from loop
+  
+  let wrapperElement = document.getElementById('main');
+  console.log(wrapperElement);
+
   let documentFragment = document.createDocumentFragment();
   let mainWrapper = document.querySelector('.location-wrapper');
 
@@ -58,9 +117,15 @@ function renderCity(body) {
     documentFragment.appendChild(contentWrapper);
   }
 
-  mainWrapper.appendChild(documentFragment);
+  
+  
+  wrapperElement.appendChild(documentFragment);
+
+
+  
 
 }
 
 export {renderCity};
+export default Render;
 

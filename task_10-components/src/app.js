@@ -1,6 +1,5 @@
 import "./assets/sass/app.sass";
 import App from "./components/App";
 
-
-let appl = new App;
-let appT = appl.render();
+let appl = new App({ host: document.getElementById('root')});
+appl.update();

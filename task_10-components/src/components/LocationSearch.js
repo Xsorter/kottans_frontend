@@ -1,7 +1,10 @@
+import { Component } from "../default/app"
 import { findCity } from "./Search";
 
-class LocationSearch {
+class LocationSearch extends Component{
     constructor(props) {
+        super(props);
+
         this.state = {
             isValid : true
         }
@@ -14,22 +17,11 @@ class LocationSearch {
         this.host.addEventListener('submit', this.handleSubmit);
     }
 
-    update(nextProps){
-        this.props = nextProps;
-        return this.render();
-        console.log(this.props);
-    }
-
-    updateState(nextState) {
-        this.state = nextState;
-        this.render();
-    }
-
     handleSubmit(e){
         e.preventDefault();
         const city = e.target.elements.search.value.trim();
 
-        findCity(this.props.city);
+        findCity(city);
 
         if(!city.length){
             this.updateState({isValid: false})
@@ -43,8 +35,7 @@ class LocationSearch {
         const {city} = this.props;
         console.log(this.props);
         
-
-        this.host.innerHTML = `
+        return `
             <h1 class="title">Weather-app</h1>
             <form class=${isValid ? '"weather-form"' : '"weather-form --invalid"'}>
                 <div class="search">
@@ -54,7 +45,6 @@ class LocationSearch {
             </form>
         `;
 
-        return this.host
     }
 
 }

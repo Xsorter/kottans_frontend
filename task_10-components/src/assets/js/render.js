@@ -49,6 +49,10 @@ class Render{
 
   }
 
+  meth(){
+    console.log('222')
+  }
+
   render() {
     this.host.innerHTML = ``
     return this.host

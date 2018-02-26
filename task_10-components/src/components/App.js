@@ -1,7 +1,8 @@
 import { Component } from "../default/app";
 import LocationSearch from "./LocationSearch";
 import Render from "../assets/js/render";
-import Footer from "./Footer"
+import Footer from "./Footer";
+import { findCity } from "./Search";
 
 class App extends Component {
   constructor({ host }) {
@@ -26,6 +27,7 @@ class App extends Component {
 
   onSearchSubmit(city) {
     this.updateState({ city });
+    findCity(city);
   }
 
   render() {

@@ -20,9 +20,6 @@ class LocationSearch extends Component{
     handleSubmit(e){
         e.preventDefault();
         const city = e.target.elements.search.value.trim();
-
-        findCity(city);
-
         if(!city.length){
             this.updateState({isValid: false})
         }else{

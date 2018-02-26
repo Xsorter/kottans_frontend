@@ -1,6 +1,7 @@
 import { Component } from "../default/app";
 import LocationSearch from "./LocationSearch";
 import Render from "../assets/js/render";
+import Footer from "./Footer"
 
 class App extends Component {
   constructor({ host }) {
@@ -20,6 +21,7 @@ class App extends Component {
     console.log(this.host);
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.mainElement = new Render();
+    this.footerElement = new Footer();
   }
 
   onSearchSubmit(city) {
@@ -31,7 +33,8 @@ class App extends Component {
 
     return [
       this.locationElement.update({ city, onSubmit: this.onSearchSubmit }),
-      this.mainElement.render()
+      this.mainElement.render(),
+      this.footerElement.update()
     ];
   }
 }

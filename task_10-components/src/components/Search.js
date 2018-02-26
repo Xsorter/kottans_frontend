@@ -44,12 +44,12 @@ function findCity(city) {
   pushUrl(city); */
 
   getWeather(`/daily?city=${city}&units=${data.units}&key=${data.secretKey}`)
-    .then(function(body){
-      if (body) {
+    .then(function(city){
+      if (city) {
         console.log('success');
-        renderCity(body);
+        renderCity(city);
       }
-      return body;
+      return city;
     })
     .catch(setError);
 }

@@ -75,7 +75,7 @@ class Render{
   } */
 
 //render method
-function renderCity(body) {
+function renderCity(city) {
   /* dataDOM.loaderDOM.classList.add("none"); */
   /* addFavoriteButton(body); */
 
@@ -95,24 +95,24 @@ function renderCity(body) {
       `
         <div class="content__values">
           <p>
-            <span class="caption__number">${body.data[i].temp}</span> ${data.unitsDisplay}
+            <span class="caption__number">${city.data[i].temp}</span> ${data.unitsDisplay}
             <p class="caption__title">avg. temp.</p> 
           </p>
-          <object data="assets/media/${body.data[i].weather.icon}.svg" type="">
+          <object data="assets/media/${city.data[i].weather.icon}.svg" type="">
           </object>
-          <p class="caption__title">${body.data[i].weather.description}</p> 
+          <p class="caption__title">${city.data[i].weather.description}</p> 
         </div>
-        <p class="date">${body.data[i].datetime
+        <p class="date">${city.data[i].datetime
           .split("-")
           .reverse()
           .join(".")}
         </p> 
-        <p>max. temp.: ${body.data[i].max_temp} ${data.unitsDisplay}</p>
-        <p>min. temp.: ${body.data[i].min_temp} ${data.unitsDisplay}</p>
-        <p>feels like, max: ${body.data[i].app_max_temp} ${data.unitsDisplay}</p>
-        <p>feels like, min: ${body.data[i].app_min_temp} ${data.unitsDisplay}</p>
-        <p>wind: ${body.data[i].wind_spd} m/s</p>
-        <p>precipitation: ${body.data[i].pop} %</p>
+        <p>max. temp.: ${city.data[i].max_temp} ${data.unitsDisplay}</p>
+        <p>min. temp.: ${city.data[i].min_temp} ${data.unitsDisplay}</p>
+        <p>feels like, max: ${city.data[i].app_max_temp} ${data.unitsDisplay}</p>
+        <p>feels like, min: ${city.data[i].app_min_temp} ${data.unitsDisplay}</p>
+        <p>wind: ${city.data[i].wind_spd} m/s</p>
+        <p>precipitation: ${city.data[i].pop} %</p>
       `
     );
     documentFragment.appendChild(contentWrapper);

@@ -19,12 +19,9 @@ const dataDOM = {
 let data = {
   city: parsedUrl.searchParams.get("city"),
 
-  //api key
-  secretKey: "c6976a4c4e05421f9b4eaee7a311f0dc",
   units: "M",
   unitsDisplay: "C",
   period: 1,
-
   //localstorage objects
   historyObj: {
     city: []

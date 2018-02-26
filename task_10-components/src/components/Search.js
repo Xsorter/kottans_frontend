@@ -43,10 +43,9 @@ function findCity(city) {
   dataDOM.loaderDOM.classList.remove("none"); //show loader
   pushUrl(city); */
 
-  getWeather(`/daily?city=${city}&units=${data.units}&key=${data.secretKey}`)
+  getWeather(`/daily?city=${city}&units=${data.units}`)
     .then(function(city){
       if (city) {
-        console.log('success');
         renderCity(city);
       }
       return city;

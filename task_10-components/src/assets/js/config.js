@@ -3,8 +3,6 @@ let parsedUrl = new URL(window.location.href);
 
 //object with DOM elements
 const dataDOM = {
-  formDOM: document.querySelector("#search-form"),
-  inputDOM: document.querySelector("#search"),
   mainDOM: document.querySelector(".wrapper"),
   titleDOM: document.querySelector(".description"),
   unitsDOM: document.querySelector("#units"),
@@ -13,7 +11,6 @@ const dataDOM = {
   favoritesDOM: document.querySelector(".favorites"),
   buttonHistoryClear: document.querySelector("#history-clear"),
   buttonFavoritesClear: document.querySelector("#favorites-clear"),
-  loaderDOM: document.querySelector(".loader")
 };
 
 let data = {

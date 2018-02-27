@@ -20,7 +20,9 @@ function getUrl(){
 } */
 
 function setError(error){
-  /* dataDOM.loaderDOM.classList.add("none");
+  let loader = document.querySelector('.loader');
+  loader.classList.add('none');
+  /* 
   if (error.status === 204) {
     dataDOM.titleDOM.insertAdjacentHTML(
       "beforeend",
@@ -38,14 +40,15 @@ function setError(error){
 }
 
 function findCity(city) {
-  /* dataDOM.mainDOM.innerHTML = "";
-  dataDOM.titleDOM.innerHTML = "";
-  dataDOM.loaderDOM.classList.remove("none"); //show loader
+  /*
   pushUrl(city); */
+  let loader = document.querySelector('.loader');
+  loader.classList.remove('none');
 
   getWeather(`/daily?city=${city}&units=${data.units}`)
     .then(function(city){
       if (city) {
+        loader.classList.add('none');
         renderCity(city);
       }
       return city;

@@ -1,5 +1,6 @@
 import { Component } from "../default/app"
 import { findCity } from "./Search";
+import "../assets/media/loader.svg";
 
 class LocationSearch extends Component{
     constructor(props) {
@@ -33,6 +34,9 @@ class LocationSearch extends Component{
         console.log(this.props);
         
         return `
+            <div class="loader none">
+                <object data="assets/media/loader.svg"></object>
+            </div>
             <h1 class="title">Weather-app</h1>
             <form class=${isValid ? '"weather-form"' : '"weather-form --invalid"'}>
                 <div class="search">

@@ -9,7 +9,8 @@ class App extends Component {
     super();
 
     this.state = {
-      city: new URLSearchParams(window.location.search).get("city") || ""
+      city: new URLSearchParams(window.location.search).get("city") || "",
+      isLoaded: true
     };
 
     this.host = host;

@@ -24,14 +24,15 @@ class LocationSearch extends Component{
         if(!city.length){
             this.updateState({isValid: false})
         }else{
-            this.props.onSubmit(city)
+            this.props.onSubmit(city);
+            console.log(this.props);
         }
     }
 
     render() {
         const {isValid} = this.state;
         const {city} = this.props;
-        console.log(this.props);
+        
         
         return `
             <div class="loader none">

@@ -1,6 +1,8 @@
 import { Component } from "../default/app";
 import LocationSearch from "./LocationSearch";
 import Render from "../assets/js/render";
+
+import Filter from "./Filter";
 import Footer from "./Footer";
 import { findCity } from "./Search";
 
@@ -10,6 +12,7 @@ class App extends Component {
 
     this.state = {
       city: new URLSearchParams(window.location.search).get("city") || "",
+      period: 1,
       isLoaded: true
     };
 
@@ -21,10 +24,18 @@ class App extends Component {
     });
 
     console.log(this.host);
+    console.log(this.props);
+
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
+    this.filterElement = new Filter({
+      period: this.state.period,
+      onSubmit: this.onSearchSubmit
+    });
     this.mainElement = new Render();
     this.footerElement = new Footer();
   }
+
+
 
   onSearchSubmit(city) {
     this.updateState({ city });
@@ -32,10 +43,12 @@ class App extends Component {
   }
 
   render() {
-    const { city } = this.state;
+    const { city, period } = this.state;
+
 
     return [
       this.locationElement.update({ city, onSubmit: this.onSearchSubmit }),
+      this.filterElement.update({ period, onSubmit: this.onSearchSubmit }),
       this.mainElement.render(),
       this.footerElement.update()
     ];

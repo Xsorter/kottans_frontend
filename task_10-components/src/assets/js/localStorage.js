@@ -1,5 +1,5 @@
 import {parsedUrl, dataDOM, data} from "./config";
-import {findCity} from "./search";
+import {findCity} from "../../components/Search";
 
 /*clear localstorage data*/
 function clearLocalStorage(DOM, key) {

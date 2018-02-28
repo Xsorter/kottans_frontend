@@ -110,7 +110,7 @@ function renderCity(city) {
           .split("-")
           .reverse()
           .join(".")}
-        </p> 
+        </p>  
         <p>max. temp.: ${city.data[i].max_temp} ${data.unitsDisplay}</p>
         <p>min. temp.: ${city.data[i].min_temp} ${data.unitsDisplay}</p>
         <p>feels like, max: ${city.data[i].app_max_temp} ${data.unitsDisplay}</p>

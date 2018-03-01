@@ -39,13 +39,16 @@ function setError(error){
   console.log(error.status)
 }
 
-function findCity(city) {
+function findCity(city, period) {
   /*
   pushUrl(city); */
   let loader = document.querySelector('.loader');
   loader.classList.remove('none');
 
-  getWeather(`/daily?city=${city}&units=${data.units}`)
+
+  console.log(period.value);
+
+  getWeather(`/daily?city=${city}&units=${data.units}&days=${period}`)
     .then(function(city){
       if (city) {
         loader.classList.add('none');

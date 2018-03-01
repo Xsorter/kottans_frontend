@@ -5,8 +5,8 @@ class Filter extends Component{
         super(props);
 
         this.props = props;
-        this.handleSubmit = this.handleSubmit.bind(this);
 
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.host = document.createElement('div');
         this.host.classList.add('filter');
         
@@ -17,19 +17,21 @@ class Filter extends Component{
     }
 
     handleSubmit(e){
-        const period = 1;
+        const period = document.getElementById('period').value;
 
-        console.log('changed');
+        this.props.onSubmit(this.props.city, period);
+
+        console.log(period);
         console.log(this.props);
     }
 
     render(){
-        const { period } = this.props;
-    
+        const {city, period} = this.props;
+
         return `
         <div class="filter__box">
             <label for="period">period:</label>
-            <select name="period" id="period">
+            <select name="period" id="period" value=${period}>
                 <option value="1">Today</option>
                 <option value="2">2 days</option>
                 <option value="4">4 days</option>

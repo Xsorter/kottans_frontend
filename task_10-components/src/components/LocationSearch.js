@@ -24,7 +24,7 @@ class LocationSearch extends Component{
         if(!city.length){
             this.updateState({isValid: false})
         }else{
-            this.props.onSubmit(city);
+            this.props.onSubmit(city, this.props.period);
             console.log(this.props);
         }
     }

@@ -9,7 +9,7 @@ import { findCity } from "./Search";
 class App extends Component {
   constructor({ host }) {
     super();
-
+    
     this.state = {
       city: new URLSearchParams(window.location.search).get("city") || "",
       period: 1,
@@ -17,38 +17,42 @@ class App extends Component {
     };
 
     this.host = host;
+    this.onSearchSubmit = this.onSearchSubmit.bind(this);
 
     this.locationElement = new LocationSearch({
       city: this.state.city,
+      period: this.state.period,
       onSubmit: this.onSearchSubmit
     });
-
-    console.log(this.host);
-    console.log(this.props);
-
-    this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.filterElement = new Filter({
+      city: this.state.city,
       period: this.state.period,
       onSubmit: this.onSearchSubmit
     });
     this.mainElement = new Render();
     this.footerElement = new Footer();
+
+
+    console.log(this.props);
   }
 
 
 
-  onSearchSubmit(city) {
-    this.updateState({ city });
-    findCity(city);
+  onSearchSubmit(city, period) {
+    this.updateState({ city, period });
+    findCity(city, period);
   }
 
   render() {
     const { city, period } = this.state;
 
+    console.log(period);
+    console.log(city);
+    console.log(this.state);
 
     return [
-      this.locationElement.update({ city, onSubmit: this.onSearchSubmit }),
-      this.filterElement.update({ period, onSubmit: this.onSearchSubmit }),
+      this.locationElement.update({ city, period, onSubmit: this.onSearchSubmit }),
+      this.filterElement.update({ city, period, onSubmit: this.onSearchSubmit }),
       this.mainElement.render(),
       this.footerElement.update()
     ];

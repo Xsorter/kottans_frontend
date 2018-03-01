@@ -92,7 +92,7 @@ function renderCity(city) {
   let documentFragment = document.createDocumentFragment();
   let mainWrapper = document.querySelector('.location-wrapper');
 
-  for (let i=0; i<data.period; i++) {
+  for (let i=0; i<city.data.length; i++) {
     let contentWrapper = document.createElement("div");
     contentWrapper.className = "content";
     contentWrapper.insertAdjacentHTML("beforeend", 

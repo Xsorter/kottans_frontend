@@ -1,14 +1,14 @@
-import { Component } from "../default/app"
+import { Component } from "../default/app";
 
-class Footer extends Component{
-    constructor(){
-        super();
+class Footer extends Component {
+  constructor() {
+    super();
 
-        this.host = document.createElement('footer');
-    }
+    this.host = document.createElement("footer");
+  }
 
-    render(){
-        return `
+  render() {
+    return `
             <p>
                 2017 
                 <span>•</span> 
@@ -18,7 +18,7 @@ class Footer extends Component{
                 made by Alex Nelin
             </p>
         `;
-    }
+  }
 }
 
 export default Footer;

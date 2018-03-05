@@ -1,4 +1,3 @@
-import routes from "../utils/routes"
 import {Component} from "../default/app"
 
 class Router extends Component {
@@ -10,6 +9,7 @@ class Router extends Component {
 
     this.host = host;
     window.addEventListener('hashChange', this.handleUrlChange);
+    console.log('test');
   }
 
   get (path){

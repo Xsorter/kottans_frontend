@@ -2,13 +2,15 @@ import {Component} from "../default/app"
 
 
 class Login extends Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
       this.host = document.createElement('div');
     }
   
     render() {
-      return `<div>Component Login</div>`
+      return `
+        <div>Component Login</div>
+      `;
     }
   }
   

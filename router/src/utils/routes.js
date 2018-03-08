@@ -3,12 +3,12 @@ import Login from "../components/Login";
 
 const routes = [
     {
-        component: Login, 
-        href: '/login'
+        href: '/login',
+        component: Login
     },
     {
-        component: Default,
-        href: '/'
+        href: '/',
+        component: Default
     }
 ];
 

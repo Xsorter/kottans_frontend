@@ -15,6 +15,7 @@ class Router extends Component {
     this.host = document.createElement('div');
 
     this.handleUrlChange = this.handleUrlChange.bind(this);
+    this.handleRedirect = this.handleRedirect.bind(this);
 
     window.addEventListener('hashchange', () =>
       this.handleUrlChange(this.path)
@@ -49,7 +50,6 @@ class Router extends Component {
       this.applyRoute(nextRoute, url);
     }
 
-    console.log('eee');
   }
 
   handleRedirect(url) {
@@ -59,7 +59,6 @@ class Router extends Component {
   handleOnEnter(nextRoute, url) {
     const { href } = nextRoute;
     const params = extractUrlParams(href, url);
-
     nextRoute.onEnter(params, this.handleRedirect, nextRoute);
   }
 

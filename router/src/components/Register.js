@@ -20,6 +20,7 @@ class Register extends Component {
       })
       .then(function(body) {
         if (body) {
+          console.log(body);
           let stores = body;
           let select = document.createElement('select');
           return stores.map(function(store) {
@@ -29,7 +30,7 @@ class Register extends Component {
             select.appendChild(option);
             document.getElementById('form').appendChild(select);
           })
-          console.log(body);
+          
         }
       });
     }
@@ -42,8 +43,9 @@ class Register extends Component {
           <div class="register">
             <form id="form">
               <input type="text" placeholder="Enter your name">
+              <input type="password" placeholder="Enter your password">
+              <input type="password" placeholder="Repeat your password">
               <input type="email" placeholder="Enter your email">
-              <input type="text" placeholder="Enter your password">
               <button class="button">Register</button>
             </form>
             <a class="link" href="#/login">login</a>

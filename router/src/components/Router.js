@@ -5,6 +5,7 @@ const ANY_PATH = '*';
 class Router extends Component {
   constructor(routes) {
     super();
+  
 
     this.state = {
       activeRoute: null,
@@ -22,7 +23,7 @@ class Router extends Component {
     );
 
     this.handleUrlChange(this.path);
-    console.log('test');
+  
 
   }
 

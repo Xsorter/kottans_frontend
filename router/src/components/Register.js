@@ -9,20 +9,22 @@ class Register extends Component {
   
 
     getStores(){
-      const headers = new Headers();
-      headers.append('Content-Type' , 'application/x-www-form-urlencoded; charset=UTF-8');
-
       fetch(`https://pizza-tele.ga/api/v1/store/list`)
       .then(res => {
         if (res.ok) return res.json();
-        console.log(res.json());
-        throw new Error(res.error);
+      })
+      .then(function(body) {
+        if (body) {
+          console.log(body);
+        }
+        return body;
       });
     }
 
     render() {
       this.getStores();
 
+    
       return `
         <div class="center-flex">
           <div class="register">

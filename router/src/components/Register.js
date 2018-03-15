@@ -3,6 +3,11 @@ import {Component} from "../default/app"
 class Register extends Component {
     constructor(props) {
       super(props);
+
+      this.state = {
+        store: []
+      }
+
       this.host = document.createElement('div');
       this.getStores = this.getStores.bind(this);
     }
@@ -15,20 +20,27 @@ class Register extends Component {
       })
       .then(function(body) {
         if (body) {
+          let stores = body;
+          let select = document.createElement('select');
+          return stores.map(function(store) {
+            let option = document.createElement('option');
+            option.innerHTML = `${store.name}`;
+            option.value = store.id;
+            select.appendChild(option);
+            document.getElementById('form').appendChild(select);
+          })
           console.log(body);
         }
-        return body;
       });
     }
 
     render() {
       this.getStores();
-
     
       return `
         <div class="center-flex">
           <div class="register">
-            <form>
+            <form id="form">
               <input type="text" placeholder="Enter your name">
               <input type="email" placeholder="Enter your email">
               <input type="text" placeholder="Enter your password">

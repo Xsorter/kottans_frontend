@@ -5,7 +5,8 @@ class Register extends Component {
       super(props);
 
       this.state = {
-        name: ''
+        name: '',
+        password: ''
       }
 
     
@@ -78,14 +79,20 @@ class Register extends Component {
       });
     }
 
+
+    
     formHandle(e){
       e.preventDefault();
-      this.updateState( {name: document.getElementById('name').value});
+      this.updateState( 
+        { name: document.getElementById('name').value,
+          password: document.getElementById('password').value
+        }
+      );
       console.log(this.state);
     }
 
     render() {
-      const { name } = this.state;
+      const { name, password } = this.state;
 
       this.getStores();
       this.createUser();
@@ -95,7 +102,7 @@ class Register extends Component {
           <div class="register">
             <form id="form">
               <input type="text" value="${name}" id="name" placeholder="Enter your name">
-              <input type="password" placeholder="Enter your password">
+              <input type="password" value="${password}" id="password" placeholder="Enter your password">
               <input type="password" placeholder="Repeat your password">
               <input type="email" placeholder="Enter your email">
               <button class="button">Register</button>

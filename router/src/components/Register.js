@@ -5,12 +5,17 @@ class Register extends Component {
       super(props);
 
       this.state = {
-        store: []
+        name: ''
       }
 
+    
       this.host = document.createElement('div');
       this.getStores = this.getStores.bind(this);
       this.createUser = this.createUser.bind(this);
+
+      this.formHandle = this.formHandle.bind(this);
+
+      this.host.addEventListener("submit", this.formHandle);
     }
   
 
@@ -23,6 +28,8 @@ class Register extends Component {
         "store_id": 5,
         "store_password": "qwerty11"
       }
+
+      console.log(this.state);
 
       let header = new Headers();
       header.append('Content-Type', 'application/json');
@@ -71,16 +78,23 @@ class Register extends Component {
       });
     }
 
+    formHandle(e){
+      e.preventDefault();
+      this.updateState( {name: document.getElementById('name').value});
+      console.log(this.state);
+    }
+
     render() {
+      const { name } = this.state;
+
       this.getStores();
       this.createUser();
-
-    
+      
       return `
         <div class="center-flex">
           <div class="register">
             <form id="form">
-              <input type="text" placeholder="Enter your name">
+              <input type="text" value="${name}" id="name" placeholder="Enter your name">
               <input type="password" placeholder="Enter your password">
               <input type="password" placeholder="Repeat your password">
               <input type="email" placeholder="Enter your email">

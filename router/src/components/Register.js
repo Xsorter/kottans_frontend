@@ -6,7 +6,10 @@ class Register extends Component {
 
       this.state = {
         name: '',
-        password: ''
+        password: '',
+        passwordRepeat: '',
+        email: '',
+        store: ''
       }
 
     
@@ -22,11 +25,11 @@ class Register extends Component {
 
     createUser(){
       let data = {
-        "username": "someone",
-        "password": "qwerty12",
-        "password_repeat": "qwerty12",
-        "email": "some@gmail.com",
-        "store_id": 5,
+        "username": this.state.name,
+        "password": this.state.password,
+        "password_repeat": this.state.passwordRepeat,
+        "email": this.state.email,
+        "store_id": +this.state.store,
         "store_password": "qwerty11"
       }
 
@@ -72,6 +75,7 @@ class Register extends Component {
             option.innerHTML = `${store.name}`;
             option.value = store.id;
             select.appendChild(option);
+            select.id = 'store';
             document.getElementById('form').insertBefore(select, document.getElementById('form').childNodes[0]);
           })
           
@@ -85,17 +89,21 @@ class Register extends Component {
       e.preventDefault();
       this.updateState( 
         { name: document.getElementById('name').value,
-          password: document.getElementById('password').value
+          password: document.getElementById('password').value,
+          passwordRepeat: document.getElementById('password-repeat').value,
+          email: document.getElementById('email').value,
+          store: document.getElementById('store').value,
         }
       );
+      this.createUser();
       console.log(this.state);
     }
 
     render() {
-      const { name, password } = this.state;
+      const { name, password, passwordRepeat, email, store } = this.state;
 
       this.getStores();
-      this.createUser();
+      
       
       return `
         <div class="center-flex">
@@ -103,8 +111,8 @@ class Register extends Component {
             <form id="form">
               <input type="text" value="${name}" id="name" placeholder="Enter your name">
               <input type="password" value="${password}" id="password" placeholder="Enter your password">
-              <input type="password" placeholder="Repeat your password">
-              <input type="email" placeholder="Enter your email">
+              <input type="password" value="${passwordRepeat}" id="password-repeat" placeholder="Repeat your password">
+              <input type="email" value="${email}" id="email" placeholder="Enter your email">
               <button class="button">Register</button>
             </form>
             <a class="link" href="#/login">login</a>

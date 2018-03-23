@@ -1,7 +1,7 @@
 import {Component} from "../default/app"
 
 
-class Login extends Component {
+class User extends Component {
     constructor() {
       super();
 
@@ -60,22 +60,16 @@ class Login extends Component {
     }
   
     render() {
-      const { name, password } = this.state;
       
       return `
         <div class="center-flex">
           <div class="login">
-            <form>
-              <input type="text" id="name" value="${name}" placeholder="Enter your name">
-              <input type="password" id="password" value="${password}" placeholder="Enter your password">
-              <button class="button">login</button>
-            </form>
-            <a class="link" href="#/register">register</a>
+            <h1>User info</h1>
           </div>
         </div>
       `;
     }
   }
   
-  export default Login;
+  export default User;
   

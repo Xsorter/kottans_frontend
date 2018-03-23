@@ -1,6 +1,7 @@
 import Register from "../components/Register";
 import Login from "../components/Login";
 import PizzaList from "../components/PizzaList";
+import User from "../components/User";
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
     {
         href: '/register',
         component: Register
+    },
+    {
+        href: '/profile',
+        component: User
     }
 ];
 

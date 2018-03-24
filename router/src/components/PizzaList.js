@@ -27,17 +27,16 @@ class PizzaList extends Component {
 
       this.init = this.init.bind(this);
       this.getUserInfo = this.getUserInfo.bind(this);
+      
       this.logOut = this.logOut.bind(this);
       this.init();
     }
   
     init(){
         this.getUserInfo();
-        
     }
 
     logOut(){
-        console.log('test')
         localStorage.clear();
         window.location.replace('#/login');
     }
@@ -66,17 +65,12 @@ class PizzaList extends Component {
         console.log('test');
     }
 
+
+
     render() {
       const { name, email, logoutLink } = this.state;
-
-      if(logoutLink){
-        logoutLink.addEventListener("click", this.logOut);
-      }
       
-      console.log(logoutLink);
-      console.log(this.state);  
 
-    
       return `
         <header>
             <div class="container">
@@ -110,10 +104,12 @@ class PizzaList extends Component {
 
         <main>
             <div class="buttons">
-                <button class="button" type="button">
-                    <i class="fas fa-plus"></i>
-                    Add new pizza
-                </button>
+                <a href="/#/addpizza">
+                    <button id="add" class="button" type="button">
+                        <i class="fas fa-plus"></i>
+                        Add new pizza
+                    </button>
+                </a>
             </div>
 
             <div class="wrapper">

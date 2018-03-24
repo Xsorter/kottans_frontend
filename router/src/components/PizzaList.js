@@ -27,9 +27,16 @@ class PizzaList extends Component {
 
       this.init = this.init.bind(this);
       this.getUserInfo = this.getUserInfo.bind(this);
-      
       this.logOut = this.logOut.bind(this);
       this.init();
+
+      this.host.onclick = ((e)=>{
+          let result = e.target;
+          if(result.id === 'logout'){
+              localStorage.clear();
+              window.location.replace('#/login');
+          }
+      })
     }
   
     init(){
@@ -37,8 +44,7 @@ class PizzaList extends Component {
     }
 
     logOut(){
-        localStorage.clear();
-        window.location.replace('#/login');
+        console.log('logout');
     }
 
     getUserInfo(){
@@ -57,7 +63,6 @@ class PizzaList extends Component {
                 { 
                   name: res.username,
                   email: res.email,
-                  logoutLink: document.getElementById('logout') 
                 }
             );
         });
@@ -68,9 +73,8 @@ class PizzaList extends Component {
 
 
     render() {
-      const { name, email, logoutLink } = this.state;
+      const { name, email } = this.state;
       
-
       return `
         <header>
             <div class="container">
@@ -95,7 +99,7 @@ class PizzaList extends Component {
                         ${name === undefined ? '<a href="#/login">login</a>' : name} |
                         ${email === undefined ? '<a href="#/register">signup</a>' : email}
                         ${name === undefined ? '' : 
-                        ' | <a class="logout" id="logout" href="#">log out</a>'}
+                        ' | <span class="logout" id="logout">log out</span>'}
                     </div>
                 </div>
 
@@ -273,10 +277,9 @@ class PizzaList extends Component {
             </div>
         </footer>
       `;
-
-      
     }
   }
   
+
   export default PizzaList;
   

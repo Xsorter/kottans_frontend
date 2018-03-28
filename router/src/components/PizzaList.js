@@ -18,8 +18,32 @@ class PizzaList extends Component {
     constructor() {
       super();
       this.host = document.createElement('div');
+
+      this.init = this.init.bind(this);
+      this.getUserInfo = this.getUserInfo.bind(this);
+
+      this.init();
     }
   
+
+
+    init(){
+        this.getUserInfo();
+    }
+
+    getUserInfo(){
+        const headers = new Headers();
+        headers.append('content-type', 'application/json');
+        headers.append('authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjIyOTEyNDksInVzZXJuYW1lIjoic29tZW9uZSIsInV1aWQiOiJhYmQ4MWY4Zi02MjQ2LTQyYWQtYjk0My03YTk0OWI3ODkxMzgiLCJzdG9yZV9pZCI6NX0.CDS_pscmRsXhnqcMENCBMu-ICUbp57XGBJeRQJaXpeg')
+        fetch('https://pizza-tele.ga/api/v1/user/my_info', {
+            method: 'GET',
+            headers,
+        }).
+        then(res => res.json()).then(console.log);
+
+        console.log('test');
+    }
+
     render() {
       return `
         <header>

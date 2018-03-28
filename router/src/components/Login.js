@@ -39,6 +39,9 @@ class Login extends Component {
       .then(function(body) {
         if (body) {
           console.log(body);
+          if(!!body.success){
+            window.location.replace('#/')
+          }
           throw new Error(body.validations);
         }
       })

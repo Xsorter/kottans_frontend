@@ -1,4 +1,4 @@
-import {Component} from "../default/app"
+import { Component } from "../default/app"
 
 class Register extends Component {
     constructor(props) {
@@ -78,17 +78,16 @@ class Register extends Component {
             select.id = 'store';
             document.getElementById('form').insertBefore(select, document.getElementById('form').childNodes[0]);
           })
-          
         }
       });
     }
 
 
-    
     formHandle(e){
       e.preventDefault();
       this.updateState( 
-        { name: document.getElementById('name').value,
+        { 
+          name: document.getElementById('name').value,
           password: document.getElementById('password').value,
           passwordRepeat: document.getElementById('password-repeat').value,
           email: document.getElementById('email').value,
@@ -101,7 +100,6 @@ class Register extends Component {
 
     render() {
       const { name, password, passwordRepeat, email, store } = this.state;
-
       this.getStores();
       
       

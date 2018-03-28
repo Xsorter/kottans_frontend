@@ -7,11 +7,11 @@ const routes = [
     {
         href: '/',
         component: PizzaList,
-        onEnter: handleRedirect => {
+        /*onEnter: handleRedirect => {
             if(true){
                 window.location.hash = "/login";
             }
-        }
+        }*/
     },
     {
         href: '/login',

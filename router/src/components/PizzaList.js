@@ -37,7 +37,8 @@ class PizzaList extends Component {
                 </div>
                 <div class="login">
                     <i class="fas fa-user"></i>
-                    <a href="#">login/signup</a>
+                    <a href="#/login">login</a>
+                    <a href="#/register">signup</a>
                 </div>
             </div>
         </header>

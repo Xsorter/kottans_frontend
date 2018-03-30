@@ -8,6 +8,12 @@ header
         display: flex
         justify-content: space-between
         align-items: center
+    .box 
+        width: 30%
+        &:nth-child(2)
+            text-align: center
+        &:last-child 
+            text-align: right    
     .time  
         padding: 0.3em 0.5em 
         color: #fff
@@ -29,6 +35,11 @@ header
         border-radius: 3px
         color: #555
         transition: all ease-out 0.2s
+        display: inline
+        font-size: 85%
+        .logout 
+            color: #067500
+            font-size: 80% 
         a 
             text-decoration: none 
             color: #424242

@@ -21,19 +21,25 @@ class PizzaList extends Component {
 
       this.state = {
         name: '',
-        email: ''
+        email: '',
+        logoutLink: ''
       }
 
       this.init = this.init.bind(this);
       this.getUserInfo = this.getUserInfo.bind(this);
-
+      this.logOut = this.logOut.bind(this);
       this.init();
     }
   
-
-
     init(){
         this.getUserInfo();
+        
+    }
+
+    logOut(){
+        console.log('test')
+        localStorage.clear();
+        window.location.replace('#/login');
     }
 
     getUserInfo(){
@@ -51,7 +57,8 @@ class PizzaList extends Component {
             this.updateState( 
                 { 
                   name: res.username,
-                  email: res.email 
+                  email: res.email,
+                  logoutLink: document.getElementById('logout') 
                 }
             );
         });
@@ -60,29 +67,44 @@ class PizzaList extends Component {
     }
 
     render() {
-      const { name, email } = this.state;  
-      console.log(email);  
+      const { name, email, logoutLink } = this.state;
 
+      if(logoutLink){
+        logoutLink.addEventListener("click", this.logOut);
+      }
+      
+      console.log(logoutLink);
+      console.log(this.state);  
 
+    
       return `
         <header>
             <div class="container">
-                <div class="time">
-                    <span>
-                        <i class="far fa-clock"></i>
-                        <time datetime="00:00:00" id="time">00:00:00</time>
-                    </span>
+                <div class="box">
+                    <div class="time">
+                        <span>
+                            <i class="far fa-clock"></i>
+                            <time datetime="00:00:00" id="time">00:00:00</time>
+                        </span>
+                    </div>
                 </div>
-                <div class="logo">
-                    <a href="#">
-                        <img src="${logo}" alt="pizza logo">
-                    </a>
+                <div class="box">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="${logo}" alt="pizza logo">
+                        </a>
+                    </div>
                 </div>
-                <div class="login">
-                    <i class="fas fa-user"></i>
-                    ${name === '' ? '<a href="#/login">login</a>' : name} |
-                    <a href="#/register">signup</a>
+                <div class="box">
+                    <div class="login">
+                        <i class="fas fa-user"></i>
+                        ${name === undefined ? '<a href="#/login">login</a>' : name} |
+                        ${email === undefined ? '<a href="#/register">signup</a>' : email}
+                        ${name === undefined ? '' : 
+                        ' | <a class="logout" id="logout" href="#">log out</a>'}
+                    </div>
                 </div>
+
             </div>
         </header>
 
@@ -255,6 +277,8 @@ class PizzaList extends Component {
             </div>
         </footer>
       `;
+
+      
     }
   }
   

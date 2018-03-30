@@ -10,6 +10,11 @@ class Login extends Component {
         password: '',
       }
 
+
+      this.storage = {
+        token : ''
+      }
+
       this.host = document.createElement('div');
       this.loginUser = this.loginUser.bind(this);
 
@@ -40,6 +45,7 @@ class Login extends Component {
         if (body) {
           console.log(body);
           if(!!body.success){
+            localStorage.setItem('myToken', body.token);
             window.location.replace('#/')
           }
           throw new Error(body.validations);
@@ -58,6 +64,8 @@ class Login extends Component {
           password: document.getElementById('password').value
         }
       );
+
+    
       this.loginUser();
       console.log(this.state);
     }

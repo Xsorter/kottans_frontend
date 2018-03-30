@@ -19,6 +19,11 @@ class PizzaList extends Component {
       super();
       this.host = document.createElement('div');
 
+      this.state = {
+        name: '',
+        email: ''
+      }
+
       this.init = this.init.bind(this);
       this.getUserInfo = this.getUserInfo.bind(this);
 
@@ -32,19 +37,33 @@ class PizzaList extends Component {
     }
 
     getUserInfo(){
+        let token = localStorage.getItem('myToken');
         const headers = new Headers();
         headers.append('content-type', 'application/json');
-        headers.append('authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjIyOTEyNDksInVzZXJuYW1lIjoic29tZW9uZSIsInV1aWQiOiJhYmQ4MWY4Zi02MjQ2LTQyYWQtYjk0My03YTk0OWI3ODkxMzgiLCJzdG9yZV9pZCI6NX0.CDS_pscmRsXhnqcMENCBMu-ICUbp57XGBJeRQJaXpeg')
+        headers.append('authorization', `Bearer ${token}`)
         fetch('https://pizza-tele.ga/api/v1/user/my_info', {
             method: 'GET',
             headers,
         }).
-        then(res => res.json()).then(console.log);
+        then(res => res.json()).
+        then((res) => {
+            console.log(res);
+            this.updateState( 
+                { 
+                  name: res.username,
+                  email: res.email 
+                }
+            );
+        });
 
         console.log('test');
     }
 
     render() {
+      const { name, email } = this.state;  
+      console.log(email);  
+
+
       return `
         <header>
             <div class="container">
@@ -61,7 +80,7 @@ class PizzaList extends Component {
                 </div>
                 <div class="login">
                     <i class="fas fa-user"></i>
-                    <a href="#/login">login</a>
+                    ${name === '' ? '<a href="#/login">login</a>' : name} |
                     <a href="#/register">signup</a>
                 </div>
             </div>

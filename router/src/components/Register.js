@@ -33,8 +33,6 @@ class Register extends Component {
         "store_password": "qwerty11"
       }
 
-      console.log(this.state);
-
       let header = new Headers();
       header.append('Content-Type', 'application/json');
       let method = 'POST';
@@ -51,6 +49,7 @@ class Register extends Component {
       .then(function(body) {
         if (body) {
           console.log(body);
+          window.location.replace('#/login');
           throw new Error(body.validations);
         }
       })

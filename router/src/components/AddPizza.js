@@ -34,6 +34,8 @@ class AddPizza extends Component {
 
                         <input type="radio" name="pizza-size" id="size-big">
                         <label for="size-big">Pizza 60 inch</label>
+
+                        <button>Submit</button>
                     </form>
                 </section>
             </div>

@@ -13,7 +13,8 @@ class AddPizza extends Component {
       return `
         <div class="add-container">
 
-            <h1>Add new pizza</h1>
+
+            <h1>Add pizza</h1>
 
             <div class="add-wrapper">
                 <section>

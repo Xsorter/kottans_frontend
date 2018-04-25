@@ -35,13 +35,13 @@ class AddPizza extends Component {
 
                         <div>
                             <h2>Pizza size</h2>
-                            <input type="radio" checked name="pizza-size" id="size-small">
+                            <input type="radio" value="30" checked name="pizza-size" id="size-small">
                             <label for="size-small">Pizza 30 inch</label>
 
-                            <input type="radio" name="pizza-size" id="size-medium">
+                            <input type="radio" value="45" name="pizza-size" id="size-medium">
                             <label for="size-medium">Pizza 45 inch</label>
 
-                            <input type="radio" name="pizza-size" id="size-big">
+                            <input type="radio" value="60" name="pizza-size" id="size-big">
                             <label for="size-big">Pizza 60 inch</label>
                         </div>
 
